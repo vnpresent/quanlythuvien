@@ -1,4 +1,4 @@
-# 
+# Nguyen Viet Phuong + 
 Web được viết theo mô hình MVC
 // Các bảng trong db
 
