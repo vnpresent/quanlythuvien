@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('./assets/layouts/header.php');
-include_once('models/User.php');
+include_once('models/Auth.php');
 include_once('./assets/layouts/navbar.php');
 
 
@@ -12,9 +12,10 @@ $controller = isset($_GET['controller']) ? $_GET['controller'] : 'user';
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
 //Kiểm tra có phải ở trang đăng nhập hoặc đã login chưa
-if (!User::isLogin() && $action!='login')
-    header('location:index.php?controller=user&action=login');
-
+// if (!Auth::isLogin() && $action!='login')
+//     header('location:index.php?controller=auth&action=login');
+if (!Auth::isLogin())
+    echo 'Banj chua login';
 
 //Kiểm tra có tồn tại controller không
 $pathcontroller= 'controllers/'.$controller.'Controller.php';

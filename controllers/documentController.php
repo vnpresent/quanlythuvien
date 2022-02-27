@@ -1,12 +1,13 @@
 <?php
 include_once('./models/User.php');
+include_once('./models/Auth.php');
 include_once('./models/Document.php');
 class documentController
 {
 
     public function index()
     {
-        if(User::isadmin())
+        if(Auth::isadmin())
         {
             $data=Document::index();
             include_once('./views/document/index.php');
@@ -15,7 +16,7 @@ class documentController
 
     public function add()
     {
-        if(User::isadmin())
+        if(Auth::isadmin())
         {
             include_once('./views/document/add.php');
         }
@@ -23,7 +24,7 @@ class documentController
 
     public function insert()
     {
-        if(User::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $document = new Document();
 
@@ -41,7 +42,7 @@ class documentController
 
     public function edit()
     {
-        if(User::isadmin() && isset($_GET['MaTL']))
+        if(Auth::isadmin() && isset($_GET['MaTL']))
         {
             $data = Document::show($_GET['MaTL']);
             include_once('./views/document/edit.php');
@@ -50,7 +51,7 @@ class documentController
 
     public function update()
     {
-        if(User::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $document = new Document();
 
@@ -68,7 +69,7 @@ class documentController
 
     public function delete()
     {
-        if(isset($_GET['MaTL']) && User::isadmin())
+        if(isset($_GET['MaTL']) && Auth::isadmin())
         {
             $document = new Document();
             $document->MaTL = $_GET['MaTL'];
