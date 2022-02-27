@@ -18,6 +18,30 @@ class Auth
             return false;
     }
 
+    public static function isKyThuat()
+    {
+        if (self::$ChucDanh == 'kythuat')
+            return true;
+        else
+            return false;
+    }
+
+    public static function isKeHoach()
+    {
+        if (self::$ChucDanh == 'kehoach')
+            return true;
+        else
+            return false;
+    }
+
+    public static function isThuThu()
+    {
+        if (self::$ChucDanh == 'thuthu')
+            return true;
+        else
+            return false;
+    }
+
     public static function isLogin()
     {
         if (isset($_SESSION['token']) && isset($_SESSION['Username'])) {

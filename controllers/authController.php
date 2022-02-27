@@ -6,6 +6,12 @@ class authController
     public  $ChucDanh;
     public  $token;
 
+    public function index()
+    {
+        // không là hiện form login
+        include_once('./views/auth/dashboard.php');
+    }
+
     public function login()
     {
         // không là hiện form login
@@ -21,7 +27,7 @@ class authController
             $result = Auth::login($_POST['username'],$_POST['password']);
             var_dump($result);
             if($result)
-                header('location:index.php');
+                header('location:index.php?');
             else
                 $error ='Sai tài khoản hoặc mật khẩu';
         }
@@ -30,7 +36,7 @@ class authController
     public function logout()
     {
         Auth::logout();
-        header('location:index.php?controller=auth&action=login');
+        header('location:index.php?controller=auth&action=index');
     }
 }
 ?>
