@@ -12,3 +12,4 @@
     <link rel="stylesheet" href="assets\css\styles.css">
   </head>
   <body>
+  <div class="d-flex" id="wrapper">

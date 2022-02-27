@@ -1,14 +1,6 @@
 <?php
 if (Auth::isLogin()) {
 ?>
-<div class="d-flex" id="wrapper">
-        <!-- Sidebar -->
-        <?php
-        include_once('./assets/layouts/siderbar.php');
-        ?>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
@@ -62,20 +54,16 @@ if (Auth::isLogin()) {
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
     <!-- /#page-content-wrapper -->
-    </div>
 <?php
 }
 else
 {
 ?>
-<a href="index.php?controller=auth&action=login" class="nav-link active text-dark">Đăng nhập</a>
+<!-- <a href="index.php?controller=auth&action=login" class="nav-link active text-dark">Đăng nhập</a> -->
 <?php
 }
 ?>
