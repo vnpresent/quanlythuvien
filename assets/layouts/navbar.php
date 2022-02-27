@@ -1,5 +1,5 @@
 <?php
-if (User::isLogin()) {
+if (Auth::isLogin()) {
 ?>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand text-light" href="index.php">Bàn cafe</a>
@@ -10,7 +10,7 @@ if (User::isLogin()) {
       <ul class="navbar-nav mr-auto col-12">
         <div class="col-10">
         <?php
-        if (User::isadmin()) {
+        if (Auth::isadmin()) {
         ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

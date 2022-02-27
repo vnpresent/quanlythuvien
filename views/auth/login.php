@@ -115,7 +115,7 @@ input[type="submit"]:hover{
 </style>
 <div class="center">
       <h1>Đăng nhập</h1>
-      <form action="index.php?controller=user&action=login" method="post">
+      <form action="index.php?controller=auth&action=log" method="post">
         <div class="txt_field">
           <input  name="username" type="text"  placeholder="Tài khoản" required="required">
         </div>
