@@ -1,4 +1,6 @@
-
+<?php
+if (Auth::isLogin()) {
+?>
 <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
                     Thư viện TLU</div>
@@ -19,5 +21,15 @@
                         class="fas fa-power-off me-2"></i>Đăng xuất</a>
             </div>
         </div>
+<?php
+}
+else
+{
+?>
+<a href="index.php?controller=auth&action=login" class="nav-link active text-dark">Đăng nhập</a>
+<?php
+}
+?>
+
 
 
