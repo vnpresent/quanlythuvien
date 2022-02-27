@@ -6,16 +6,15 @@ include_once('./assets/layouts/navbar.php');
 
 
 //Lấy controller
-$controller = isset($_GET['controller']) ? $_GET['controller'] : 'user';
+$controller = isset($_GET['controller']) ? $_GET['controller'] : 'auth';
 
 //Lấy action
-$action = isset($_GET['action']) ? $_GET['action'] : 'index';
+$action = isset($_GET['action']) ? $_GET['action'] : 'login';
 
 //Kiểm tra có phải ở trang đăng nhập hoặc đã login chưa
 // if (!Auth::isLogin() && $action!='login')
 //     header('location:index.php?controller=auth&action=login');
-if (!Auth::isLogin())
-    echo 'Banj chua login';
+// if (!Auth::isLogin())
 
 //Kiểm tra có tồn tại controller không
 $pathcontroller= 'controllers/'.$controller.'Controller.php';
