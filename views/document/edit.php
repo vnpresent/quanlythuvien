@@ -125,9 +125,9 @@
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">NoiDung</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label" >NoiDung</label>
             <div class="col-sm-8">
-                <textarea type="text" name="NoiDung"  class="form-control" required="required" value="<?php echo $data['NoiDung'] ?>" style="height: 100px"></textarea>
+                <textarea type="text" name="NoiDung"  class="form-control" required="required" value="<?php echo $data['NoiDung'] ?>" style="height: 100px"><?php echo $data['NoiDung'] ?></textarea>
             </div>
         </div>
         <div class="form-group row">
@@ -138,8 +138,12 @@
 
         <div class="form-group row mx-auto">
             <div class="col-sm-2"></div>
-            <button type="submit" class="btn btn-primary"> Cập Nhật</button>
-            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=document" role="button">Thoát</a>
+            <div class="col-sm-8">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary"> Cập Nhật</button>
+                    <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=document" role="button">Thoát</a>
+            </div>
+            </div>
         </div>
     </form>
 </div>
