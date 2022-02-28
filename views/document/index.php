@@ -1,6 +1,6 @@
 <div class="container col-10">
     <table class="table table-bordered col-12 mx-auto">
-        <a name="" id="" class="btn btn-primary" href="index.php?controller=user&action=add" role="button">Thêm tài khoản</a>
+        <a name="" id="" class="btn btn-primary" href="index.php?controller=document&action=add" role="button">Thêm</a>
         <thead class="bg-dark text-white">
             <tr class="border-dark">
                 <th>MaTL</th>
@@ -50,7 +50,7 @@
                         echo "<td class=\"border-dark\">" . $document['NgayCN'] . "</td>";
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=document&action=edit&MaTL=' . $document['MaTL'] . '">Sửa</a>';
-                        echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa tài khoản này không?\')" href="index.php?controller=user&action=delete&MaTL=' . $document['MaTL'] . '">Xóa</a>';
+                        echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa ?\')" href="index.php?controller=document&action=delete&MaTL=' . $document['MaTL'] . '">Xóa</a>';
                         echo "</tr>";
                     }
                 }

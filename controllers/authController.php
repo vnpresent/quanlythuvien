@@ -36,7 +36,7 @@ class authController
     public function logout()
     {
         Auth::logout();
-        header('location:index.php?controller=auth&action=index');
+        // header('location:index.php?controller=auth&action=index');
     }
 }
 ?>

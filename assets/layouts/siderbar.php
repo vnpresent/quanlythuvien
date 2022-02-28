@@ -5,7 +5,7 @@
             <div class="list-group list-group-flush my-3">
                 <a href="index.php?controller=user&action=index" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fas fa-user"></i>Người dùng</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <a href="index.php?controller=document" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fas fa-book"></i>Tài liệu</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fas fa-book-reader"></i>Độc giả</a>

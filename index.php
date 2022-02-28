@@ -2,7 +2,7 @@
 session_start();
 include_once('./assets/layouts/header.php');
 include_once('models/Auth.php');
-// include_once('./assets/layouts/navbar.php');
+include_once('./assets/layouts/navbar.php');
 
 
 //Lấy controller

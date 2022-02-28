@@ -4,7 +4,7 @@ if (Auth::isLogin()) {
 <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <?php
-        include_once('./assets/layouts/siderbar.php');
+        include_once('././assets/layouts/siderbar.php');
         ?>
         <!-- /#sidebar-wrapper -->
 

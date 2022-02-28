@@ -1,7 +1,6 @@
 <?php
 include_once('./models/Auth.php');
-include_once('./models/Document.php');
-class documentController
+class readerController
 {
 
     public function index()
