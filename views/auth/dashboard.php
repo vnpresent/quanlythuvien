@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-<?php
-if (Auth::isLogin()) {
-?>
-<div class="d-flex" id="wrapper">
-        <!-- Sidebar -->
-        <?php
-        include_once('././assets/layouts/siderbar.php');
-        ?>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-=======
->>>>>>> a9f399ae53f53a2a217f2d4c5eb4105628efd9d5
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
