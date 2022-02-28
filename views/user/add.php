@@ -3,48 +3,48 @@
         <h2>Thêm người dùng</h2>
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
-            <div class="col-sm-8">
+            <div class="col-sm-4">
                 <input type="text" name="Username" class="form-control" required="required">
             </div>
-        </div>
 
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-8">
+            <label for="inputEmail3" class="col-1 col-form-label">Mật khẩu</label>
+            <div class="col-sm-3">
                 <input type="password" name="Password" class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">HoTen</label>
-            <div class="col-sm-8">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Họ tên</label>
+            <div class="col-sm-4">
                 <input type="text" name="HoTen"  class="form-control" required="required">
             </div>
-        </div>
 
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">NamSinh</label>
-            <div class="col-sm-8">
+            <label for="inputEmail3" class="col-1 col-form-label">Năm sinh</label>
+            <div class="col-sm-3">
                 <input type="date" name="NamSinh"  class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">GioiTinh</label>
-            <div class="col-sm-8">
-                <input type="text" name="GioiTinh"  class="form-control" required="required">
+            
+        </div>
+
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Giới tính</label>
+            <div class="col-sm-4">
+                <!-- <input type="text" name="GioiTinh"  class="form-control" required="required"> -->
+                <input type="radio" name="GioiTinh" value="Nam">Nam
+                <input type="radio" name="GioiTinh" value="Nữ">Nữ
+            </div>
+            
+            <label for="inputEmail3" class="col-1 col-form-label">Email</label>
+            <div class="col-sm-3">
+                <input type="email" name="Email"  class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-8">
-                <input type="text" name="Email"  class="form-control" required="required">
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">DienThoai</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Điện thoại</label>
             <div class="col-sm-8">
                 <input type="text" name="DienThoai"  class="form-control" required="required">
             </div>

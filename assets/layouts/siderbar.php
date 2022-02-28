@@ -12,7 +12,7 @@ if (Auth::isLogin()) {
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fas fa-book-reader" style="margin-right:10px"></i>Độc giả</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                <i class="fas fa-cash-register" v></i>Mượn, trả tài liệu</a>
+                <i class="fas fa-cash-register" style="margin-right:10px"></i>Mượn, trả tài liệu</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                 <i class="fas fa-chart-line" style="margin-right:10px"></i>Thống kê</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">

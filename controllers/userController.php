@@ -20,7 +20,7 @@ class userController
     // action thêm người dùng
     public function add()
     {
-        echo 'okok';
+        // echo 'okok';
         // chỉ có admin có quyền thêm
         if(Auth::isadmin())
         {
