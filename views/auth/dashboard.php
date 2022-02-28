@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 if (Auth::isLogin()) {
 ?>
@@ -9,12 +10,13 @@ if (Auth::isLogin()) {
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
+=======
+>>>>>>> a9f399ae53f53a2a217f2d4c5eb4105628efd9d5
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
-                    <h2 class="fs-2 m-0">Admin</h2>
+                    <h2 class="fs-2 m-0">Tổng quan</h2>
                 </div>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -62,20 +64,6 @@ if (Auth::isLogin()) {
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
-    <!-- /#page-content-wrapper -->
-    </div>
-<?php
-}
-else
-{
-?>
-<a href="index.php?controller=auth&action=login" class="nav-link active text-dark">Đăng nhập</a>
-<?php
-}
-?>

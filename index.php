@@ -2,15 +2,21 @@
 session_start();
 include_once('./assets/layouts/header.php');
 include_once('models/Auth.php');
+<<<<<<< HEAD
 include_once('./assets/layouts/navbar.php');
 
+=======
+// include_once('./assets/layouts/navbar.php');
+// include_once('./assets/layouts/siderbar.php');
+>>>>>>> a9f399ae53f53a2a217f2d4c5eb4105628efd9d5
 
 //Lấy controller
 $controller = isset($_GET['controller']) ? $_GET['controller'] : 'auth';
 
 //Lấy action
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-
+if($action != 'login')
+    include_once('./assets/layouts/siderbar.php');
 //Kiểm tra có phải ở trang đăng nhập hoặc đã login chưa
 // if (!Auth::isLogin() && $action!='login')
 //     header('location:index.php?controller=auth&action=login');

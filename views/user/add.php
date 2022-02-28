@@ -1,6 +1,6 @@
-<div class="container col-10">
+<div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=user&action=insert" method="post">
-
+        <h2>Thêm người dùng</h2>
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
             <div class="col-sm-8">
@@ -58,8 +58,14 @@
         
         <div class="form-group row mx-auto">
             <div class="col-sm-2"></div>
-            <button type="submit" class="btn btn-primary">Thêm</button>
-            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=user" role="button">Thoát</a>
+            <div class="col-sm-8">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                    <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=user" role="button">Thoát</a>
+                </div>
+            </div>
+            
+            
         </div>
     </form>
 </div>
