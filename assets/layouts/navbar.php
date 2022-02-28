@@ -16,7 +16,5 @@ else
 ?>
 
 
-<a href="" class="nav-link active text-dark">Tìm Kiếm</a>
-
 
 
