@@ -1,6 +1,12 @@
 <?php
 include_once('./models/Auth.php');
 include_once('./models/Document.php');
+include_once('./models/Category.php');
+include_once('./models/Publish.php');
+include_once('./models/Language.php');
+include_once('./models/Author.php');
+include_once('./models/Position.php');
+include_once('./models/Unit.php');
 class documentController
 {
 
@@ -17,6 +23,12 @@ class documentController
     {
         if(Auth::isadmin())
         {
+            $categorys = Category::index();
+            $publishs = Publish::index();
+            $languages = Language::index();
+            $authors = Author::index();
+            $positions = Position::index();
+            $units = Unit::index();
             include_once('./views/document/add.php');
         }
     }
