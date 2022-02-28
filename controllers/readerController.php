@@ -1,5 +1,6 @@
 <?php
 include_once('./models/Auth.php');
+include_once('./models/Reader.php');
 class readerController
 {
 
@@ -7,8 +8,8 @@ class readerController
     {
         if(Auth::isadmin())
         {
-            $data=Document::index();
-            include_once('./views/document/index.php');
+            $data=Reader::index();
+            include_once('./views/reader/index.php');
         }
     }
 
@@ -16,7 +17,7 @@ class readerController
     {
         if(Auth::isadmin())
         {
-            include_once('./views/document/add.php');
+            include_once('./views/reader/add.php');
         }
     }
 
@@ -24,17 +25,17 @@ class readerController
     {
         if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            $document = new Document();
+            $Reader = new Reader();
 
-            foreach($document->fill as $prop)
+            foreach($Reader->fill as $prop)
             {
                 if(isset($_POST[$prop]))
                 {
-                    $document->$prop = $_POST[$prop];
+                    $Reader->$prop = $_POST[$prop];
                 }
             }
-            $document->save();
-            header('location:index.php?controller=document&action=add&result=true');
+            $Reader->save();
+            header('location:index.php?controller=reader&action=add&result=true');
         }
     }
 
@@ -42,8 +43,8 @@ class readerController
     {
         if(Auth::isadmin() && isset($_GET['MaTL']))
         {
-            $data = Document::show($_GET['MaTL']);
-            include_once('./views/document/edit.php');
+            $data = Reader::show($_GET['MaTL']);
+            include_once('./views/reader/edit.php');
         }
     }
 
@@ -51,17 +52,17 @@ class readerController
     {
         if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            $document = new Document();
+            $reader = new Reader();
 
-            foreach($document->fill as $prop)
+            foreach($reader->fill as $prop)
             {
                 if(isset($_POST[$prop]))
                 {
-                    $document->$prop = $_POST[$prop];
+                    $reader->$prop = $_POST[$prop];
                 }
             }
-            $document->update();
-            header('location:index.php?controller=document&action=edit&result=true&MaTL='.$_POST['MaTL']);
+            $reader->update();
+            header('location:index.php?controller=reader&action=edit&result=true&MaTL='.$_POST['MaTL']);
         }
     }
 
@@ -69,10 +70,10 @@ class readerController
     {
         if(isset($_GET['MaTL']) && Auth::isadmin())
         {
-            $document = new Document();
-            $document->MaTL = $_GET['MaTL'];
-            $document->delete();
-            header('location:index.php?controller=document');
+            $reader = new Reader();
+            $reader->MaTL = $_GET['MaTL'];
+            $reader->delete();
+            header('location:index.php?controller=reader');
         }
         else
         {

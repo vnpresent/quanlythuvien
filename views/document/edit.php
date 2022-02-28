@@ -8,26 +8,54 @@
                 <input type="text" name="TenTL" class="form-control" required="required" value="<?php echo $data['TenTL'] ?>">
             </div>
         </div>
-        
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">MaTheLoai</label>
             <div class="col-sm-2">
-                <input type="text" name="MaTheLoai"  class="form-control" required="required" value="<?php echo $data['MaTheLoai'] ?>">
+                <!-- <input type="text" name="MaTheLoai"  class="form-control" required="required" value=""> -->
+                <select name="MaTheLoai" class="form-control" aria-label="Default select example">
+                    <?php
+                        foreach($categorys as $category)
+                        {                       
+                            echo "<option value='".$category['MaTheLoai']."'   ".($category['MaTheLoai']==$data['MaTheLoai']?'selected':'')."  >".$category['TenTheLoai']."</option>";
+                        }
+                    ?>
+                </select>
             </div>
             <label for="inputEmail3" class="col-1 col-form-label">MaDV</label>
             <div class="col-sm-2">
-                <input type="text" name="MaDV"  class="form-control" required="required" value="<?php echo $data['MaDV'] ?>">
+                <select name="MaDV" class="form-control" aria-label="Default select example">
+                <?php
+                        foreach($units as $unit)
+                        {
+                            echo "<option value='".$unit['MaDV']."' ".($unit['MaDV']==$data['MaDV']?'selected':'').">".$unit['TenDV']."</option>";
+                        }
+                    ?>
+                </select>
             </div>
             <label for="inputEmail3" class="col-1 col-form-label">MaTG</label>
             <div class="col-sm-2">
-                <input type="text" name="MaTG"  class="form-control" required="required" value="<?php echo $data['MaTG'] ?>">
+            <select name="MaTG" class="form-control" aria-label="Default select example">
+                <?php
+                        foreach($authors as $author)
+                        {
+                            echo "<option value='".$author['MaTG']."' ".($author['MaTG']==$data['MaTG']?'selected':'')." >".$author['TenTG']."</option>";
+                        }
+                    ?>
+                </select>
             </div>
         </div>
 
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">MaNXB</label>
             <div class="col-sm-2">
-                <input type="text" name="MaNXB"  class="form-control" required="required" value="<?php echo $data['MaNXB'] ?>">
+            <select name="MaNXB" class="form-control" aria-label="Default select example">
+                <?php
+                        foreach($publishs as $publish)
+                        {
+                            echo "<option value='".$publish['MaNXB']."' ".($publish['MaNXB']==$data['MaNXB']?'selected':'')." >".$publish['TenNXB']."</option>";
+                        }
+                    ?>
+                </select>
             </div>
             <label for="inputEmail3" class="col-1 col-form-label">NamXB</label>
             <div class="col-sm-2">
@@ -35,7 +63,14 @@
             </div>
             <label for="inputEmail3" class="col-1 col-form-label">MaNgonNgu</label>
             <div class="col-sm-2">
-                <input type="text" name="MaNgonNgu"  class="form-control" required="required" value="<?php echo $data['MaNgonNgu'] ?>">
+            <select name="MaNgonNgu" class="form-control" aria-label="Default select example">
+                <?php
+                        foreach($languages as $language)
+                        {
+                            echo "<option value='".$language['MaNgonNgu']."' ".($language['MaNgonNgu']==$data['MaNgonNgu']?'selected':'')." >".$language['TenNgonNgu']."</option>";
+                        }
+                    ?>
+                </select>
             </div>
         </div>
 
@@ -78,7 +113,14 @@
             </div>
             <label for="inputEmail3" class="col-1 col-form-label">MaVT</label>
             <div class="col-sm-4">
-                <input type="text" name="MaVT"  class="form-control" required="required" value="<?php echo $data['MaVT'] ?>">
+            <select name="MaVT" class="form-control" aria-label="Default select example">
+                <?php
+                        foreach($positions as $position)
+                        {
+                            echo "<option value='".$position['MaVT']."' ".($position['MaVT']==$data['MaVT']?'selected':'')." >".$position['TenVT']."</option>";
+                        }
+                    ?>
+                </select>
             </div>
         </div>
 

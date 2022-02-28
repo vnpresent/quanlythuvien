@@ -56,6 +56,13 @@ class documentController
         if(Auth::isadmin() && isset($_GET['MaTL']))
         {
             $data = Document::show($_GET['MaTL']);
+            $categorys = Category::index();
+            
+            $publishs = Publish::index();
+            $languages = Language::index();
+            $authors = Author::index();
+            $positions = Position::index();
+            $units = Unit::index();
             include_once('./views/document/edit.php');
         }
     }
