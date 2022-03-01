@@ -25,19 +25,19 @@ class Unit
     function save()
     {
         $query = "INSERT INTO `donvi` (`MaDV`, `TenDV`, `GhiChu`, `status`) VALUES (NULL, '$this->TenDV', '$this->GhiChu' ,'1');";
-        query($query);
+        return query($query);
     }
 
     function update()
     {
         $query = "UPDATE `donvi` SET  TenDV = '$this->TenDV', GhiChu = '$this->GhiChu'  WHERE MaDV = $this->MaDV";
-        query($query);
+        return query($query);
     }
 
     function delete()
     {
         $query = "update donvi set status = 0 where MaDV = '$this->MaDV'";
-        query($query);
+        return query($query);
     }
 
     

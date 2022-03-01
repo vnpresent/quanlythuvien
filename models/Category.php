@@ -25,19 +25,19 @@ class Category
     function save()
     {
         $query = "INSERT INTO `theloai` (`MaTheLoai`, `TenTheLoai`, `GhiChu`, `status`) VALUES (NULL, '$this->TenTheLoai', '$this->GhiChu' ,'1');";
-        query($query);
+        return query($query);
     }
 
     function update()
     {
         $query = "UPDATE `theloai` SET  TenTheLoai = '$this->TenTheLoai', GhiChu = '$this->GhiChu'  WHERE MaTheLoai = $this->MaTheLoai";
-        query($query);
+        return query($query);
     }
 
     function delete()
     {
         $query = "update theloai set status = 0 where MaTheLoai = '$this->MaTheLoai'";
-        query($query);
+        return query($query);
     }
 
     

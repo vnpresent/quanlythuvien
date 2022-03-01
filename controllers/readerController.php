@@ -34,8 +34,11 @@ class readerController
                     $Reader->$prop = $_POST[$prop];
                 }
             }
-            $Reader->save();
-            header('location:index.php?controller=reader&action=add&result=true');
+            if($Reader->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=reader&action=add&result='.$result);
         }
     }
 
@@ -61,8 +64,11 @@ class readerController
                     $reader->$prop = $_POST[$prop];
                 }
             }
-            $reader->update();
-            header('location:index.php?controller=reader&action=edit&result=true&MaTL='.$_POST['MaTL']);
+            if($reader->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=reader&action=edit&result='.$result.'&MaTL='.$_POST['MaTL']);
         }
     }
 

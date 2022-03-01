@@ -34,8 +34,11 @@ class languageController
                     $language->$prop = $_POST[$prop];
                 }
             }
-            $language->save();
-            header('location:index.php?controller=language&action=add&result=true');
+            if($language->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=language&action=add&result='.$result);
         }
     }
 
@@ -61,8 +64,11 @@ class languageController
                     $language->$prop = $_POST[$prop];
                 }
             }
-            $language->update();
-            header('location:index.php?controller=language&action=edit&result=true&MaNgonNgu='.$_POST['MaNgonNgu']);
+            if($language->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=language&action=edit&result='.$result.'&MaNgonNgu='.$_POST['MaNgonNgu']);
         }
     }
 

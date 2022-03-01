@@ -25,19 +25,19 @@ class Position
     function save()
     {
         $query = "INSERT INTO `vitri` (`MaVT`, `TenVT`, `MoTa`, `status`) VALUES (NULL, '$this->TenVT', '$this->MoTa' ,'1');";
-        query($query);
+        return query($query);
     }
 
     function update()
     {
         $query = "UPDATE `vitri` SET  TenVT = '$this->TenVT', MoTa = '$this->MoTa'  WHERE MaVT = $this->MaVT";
-        query($query);
+        return query($query);
     }
 
     function delete()
     {
         $query = "update vitri set status = 0 where MaVT = '$this->MaVT'";
-        query($query);
+        return query($query);
     }
 
     

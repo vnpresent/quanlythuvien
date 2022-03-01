@@ -20,8 +20,6 @@ class userController
     // action thêm người dùng
     public function add()
     {
-        // echo 'okok';
-        // chỉ có admin có quyền thêm
         if(Auth::isadmin())
         {
             include_once('./views/user/add.php');
@@ -45,8 +43,11 @@ class userController
                     $user->$prop = $_POST[$prop];
                 }
             }
-            $user->save();
-            header('location:index.php?controller=user&action=add&result=true');
+            if($user->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=user&action=add&result='.$result);
         }
         else
         {
@@ -82,8 +83,11 @@ class userController
                     $user->$prop = $_POST[$prop];
                 }
             }
-            $user->update();
-            header('location:index.php?controller=user&action=edit&result=true&id='.$_POST['id']);
+            if($user->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=user&action=edit&result='.$result.'&id='.$_POST['id']);
         }
         else
         {

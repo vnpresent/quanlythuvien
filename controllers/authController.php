@@ -25,18 +25,19 @@ class authController
         {
             print($_POST['username']);
             $result = Auth::login($_POST['username'],$_POST['password']);
-            var_dump($result);
             if($result)
-                header('location:index.php?');
+                header('location:index.php');
             else
-                $error ='Sai tài khoản hoặc mật khẩu';
+                header('location:index.php?controller=auth&action=login&error=Sai tài khoản hoặc mật khẩu');
         }
+        else
+            header('location:index.php');
     }
 
     public function logout()
     {
         Auth::logout();
-        // header('location:index.php?controller=auth&action=index');
+        header('location:index.php?controller=auth&action=index');
     }
 }
 ?>

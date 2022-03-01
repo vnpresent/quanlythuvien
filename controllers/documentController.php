@@ -46,8 +46,11 @@ class documentController
                     $document->$prop = $_POST[$prop];
                 }
             }
-            $document->save();
-            header('location:index.php?controller=document&action=add&result=true');
+            if($document->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=document&action=add&result='.$result);
         }
     }
 
@@ -80,8 +83,11 @@ class documentController
                     $document->$prop = $_POST[$prop];
                 }
             }
-            $document->update();
-            header('location:index.php?controller=document&action=edit&result=true&MaTL='.$_POST['MaTL']);
+            if($document->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=document&action=edit&result='.$result.'&MaTL='.$_POST['MaTL']);
         }
     }
 

@@ -33,24 +33,24 @@ class User
     {
         $token = rand_string(18);
         $query = "INSERT INTO `nguoidung` (`id`, `username`, `password`, `HoTen`, `NamSinh`, `GioiTinh`, `ChucDanh`, `Email`, `DienThoai`, `token`, `status`) VALUES (NULL, '$this->Username', '$this->Password', '$this->HoTen', '$this->NamSinh', '$this->GioiTinh', 'docgia', '$this->Email', '$this->DienThoai', '$token', '1');";
-        query($query);
+        return query($query);
     }
 
     function update()
     {
         $query = "UPDATE `nguoidung` SET  HoTen = '$this->HoTen', NamSinh = '$this->NamSinh', GioiTinh = '$this->GioiTinh', Email = '$this->Email', DienThoai = '$this->DienThoai'  WHERE id = $this->id";
-        query($query);
+        return query($query);
     }
 
     function per()
     {
         $query = "UPDATE `nguoidung` SET  ChucDanh = '$this->ChucDanh' WHERE id = $this->id";
-        query($query);
+        return query($query);
     }
 
     function delete()
     {
         $query = "update nguoidung set status = 0 where id = $this->id";
-        query($query);
+        return query($query);
     }
 }

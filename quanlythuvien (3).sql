@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 28, 2022 lúc 09:57 AM
+-- Thời gian đã tạo: Th3 01, 2022 lúc 08:13 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.4.25
 
@@ -59,6 +59,62 @@ INSERT INTO `donvi` (`MaDV`, `TenDV`, `GhiChu`, `status`) VALUES
 (1, 'Khoa CNTT', 'khoa cong nghe thong tin', 1),
 (2, 'Khoa DL', 'khoa dien lanh', 0),
 (3, 'Khoa Phan Mem', 'khoa phan mem', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `dsdktaothe`
+--
+
+CREATE TABLE `dsdktaothe` (
+  `MaDK` int(11) NOT NULL,
+  `HoTen` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `NamSinh` date NOT NULL,
+  `GioiTinh` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `ChucDanh` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `MaDV` int(11) NOT NULL,
+  `MaLop` int(11) NOT NULL,
+  `KhoaHoc` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `DienThoai` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `Email` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `AnhThe` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `HinhThucDK` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `LoaiDK` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `NgayDK` date NOT NULL,
+  `KTLePhi` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `XuLy` text COLLATE utf8mb4_vietnamese_ci NOT NULL DEFAULT 'no',
+  `status` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `dsdktaothe`
+--
+
+INSERT INTO `dsdktaothe` (`MaDK`, `HoTen`, `NamSinh`, `GioiTinh`, `ChucDanh`, `MaDV`, `MaLop`, `KhoaHoc`, `DienThoai`, `Email`, `AnhThe`, `HinhThucDK`, `LoaiDK`, `NgayDK`, `KTLePhi`, `XuLy`, `status`) VALUES
+(1, 'Phuong', '2022-03-08', 'nam', 'khong', 1, 1, 'ok', '08543', 'pfggihgs', 'ok anh the', 'online', 'lam lai', '0000-00-00', 'yes', 'no', 0),
+(2, 'Nguyen Viet Phuong', '2000-08-08', 'nam', 'Không', 1, 1, 'Th4', '0337646311', 'phuong2k88@gmail.com', 'none', 'online', 'lamlai', '0000-00-00', 'yes', 'no', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `lop`
+--
+
+CREATE TABLE `lop` (
+  `MaLop` int(11) NOT NULL,
+  `TenLop` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `MaDV` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `lop`
+--
+
+INSERT INTO `lop` (`MaLop`, `TenLop`, `MaDV`, `status`) VALUES
+(1, 'Th4', 3, 1),
+(2, '', 3, 1),
+(3, 'cndl', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -214,7 +270,7 @@ CREATE TABLE `tailieu` (
 
 INSERT INTO `tailieu` (`MaTL`, `TenTL`, `MaTheLoai`, `MaDV`, `MaTG`, `MaNXB`, `NamXB`, `MaNgonNgu`, `NoiDung`, `SoTrang`, `KhoGiay`, `LanTB`, `GiaBia`, `SoPH`, `NgayPH`, `TongSo`, `MaVT`, `NgayCN`, `status`) VALUES
 (1, 'Sách Giáo Khoa Toán', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
-(2, 'Bài Làm Về Nhà', 12, 1, 1, 1, 2020, 5, 'Bài Làm', 5, 'a2', 2, 20000, 3, '2022-02-09', 12, 1, '2022-02-26', 1),
+(2, 'Bài Làm Về Nhà', 12, 1, 1, 1, 2020, 5, 'Bài Làm', 5, 'a2', 2, 20000, 3, '2022-02-09', 12, 1, '2022-02-26', 0),
 (3, 'Toán Cao Cấp', 1, 1, 1, 1, 0, 1, '1', 1, '1', 1, 1, 1, '0000-00-00', 1, 1, '2022-02-26', 1),
 (4, 'Toán Cao Cấp', 1, 1, 1, 1, 1, 1, '1', 1, '1', 1, 1, 1, '2022-02-16', 1, 1, '2022-02-26', 1),
 (5, 'Lập Trình Phân Tán', 1, 2, 3, 4, 2000, 1, 'adadfád', 12, '3', 4, 5, 1, '2022-02-18', 12, 43, '2022-02-27', 1),
@@ -240,7 +296,10 @@ CREATE TABLE `theloai` (
 INSERT INTO `theloai` (`MaTheLoai`, `TenTheLoai`, `GhiChu`, `status`) VALUES
 (1, 'Trinh Tham', 'trinh tham', 1),
 (2, 'Giai Tri', 'giai tri nhe', 0),
-(3, 'Truyen Cuoi', 'truyen cuoi', 1);
+(3, 'Truyen Cuoi', 'truyen cuoi', 1),
+(4, 'Truyen Ma', 'truyen ma', 1),
+(5, 'Lop 1', 'lop 1', 1),
+(6, 'Lop 1', 'lop 1', 1);
 
 -- --------------------------------------------------------
 
@@ -251,7 +310,7 @@ INSERT INTO `theloai` (`MaTheLoai`, `TenTheLoai`, `GhiChu`, `status`) VALUES
 CREATE TABLE `vitri` (
   `MaVT` int(11) NOT NULL,
   `TenVT` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `MoTa` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `GhiChu` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -259,7 +318,7 @@ CREATE TABLE `vitri` (
 -- Đang đổ dữ liệu cho bảng `vitri`
 --
 
-INSERT INTO `vitri` (`MaVT`, `TenVT`, `MoTa`, `status`) VALUES
+INSERT INTO `vitri` (`MaVT`, `TenVT`, `GhiChu`, `status`) VALUES
 (1, '1', 'so 1', 1),
 (2, '2', 'so 2', 1),
 (3, '3', 'so 3', 1),
@@ -281,6 +340,18 @@ ALTER TABLE `docgia`
 --
 ALTER TABLE `donvi`
   ADD PRIMARY KEY (`MaDV`);
+
+--
+-- Chỉ mục cho bảng `dsdktaothe`
+--
+ALTER TABLE `dsdktaothe`
+  ADD PRIMARY KEY (`MaDK`);
+
+--
+-- Chỉ mục cho bảng `lop`
+--
+ALTER TABLE `lop`
+  ADD PRIMARY KEY (`MaLop`);
 
 --
 -- Chỉ mục cho bảng `ngonngu`
@@ -348,6 +419,18 @@ ALTER TABLE `donvi`
   MODIFY `MaDV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT cho bảng `dsdktaothe`
+--
+ALTER TABLE `dsdktaothe`
+  MODIFY `MaDK` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `lop`
+--
+ALTER TABLE `lop`
+  MODIFY `MaLop` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT cho bảng `ngonngu`
 --
 ALTER TABLE `ngonngu`
@@ -387,7 +470,7 @@ ALTER TABLE `tailieu`
 -- AUTO_INCREMENT cho bảng `theloai`
 --
 ALTER TABLE `theloai`
-  MODIFY `MaTheLoai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `MaTheLoai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `vitri`

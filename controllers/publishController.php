@@ -34,8 +34,11 @@ class publishController
                     $publish->$prop = $_POST[$prop];
                 }
             }
-            $publish->save();
-            header('location:index.php?controller=publish&action=add&result=true');
+            if($publish->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=publish&action=add&result='.$result);
         }
     }
 
@@ -61,8 +64,11 @@ class publishController
                     $publish->$prop = $_POST[$prop];
                 }
             }
-            $publish->update();
-            header('location:index.php?controller=publish&action=edit&result=true&MaNXB='.$_POST['MaNXB']);
+            if($publish->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=publish&action=edit&result='.$result.'&MaNXB='.$_POST['MaNXB']);
         }
     }
 

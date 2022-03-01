@@ -34,8 +34,11 @@ class unitController
                     $unit->$prop = $_POST[$prop];
                 }
             }
-            $unit->save();
-            header('location:index.php?controller=unit&action=add&result=true');
+            if($unit->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=unit&action=add&result='.$result);
         }
     }
 
@@ -61,8 +64,11 @@ class unitController
                     $unit->$prop = $_POST[$prop];
                 }
             }
-            $unit->update();
-            header('location:index.php?controller=unit&action=edit&result=true&MaDV='.$_POST['MaDV']);
+            if($unit->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=unit&action=edit&result='.$result.'&MaDV='.$_POST['MaDV']);
         }
     }
 

@@ -25,19 +25,19 @@ class Author
     function save()
     {
         $query = "INSERT INTO `tacgia` (`MaTG`, `TenTG`, `GhiChu`, `status`) VALUES (NULL, '$this->TenTG', '$this->GhiChu' ,'1');";
-        query($query);
+        return query($query);
     }
 
     function update()
     {
         $query = "UPDATE `tacgia` SET  TenTG = '$this->TenTG', GhiChu = '$this->GhiChu'  WHERE MaTG = $this->MaTG";
-        query($query);
+        return query($query);
     }
 
     function delete()
     {
         $query = "update tacgia set status = 0 where MaTG = '$this->MaTG'";
-        query($query);
+        return query($query);
     }
 
     

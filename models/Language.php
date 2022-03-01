@@ -25,19 +25,19 @@ class Language
     function save()
     {
         $query = "INSERT INTO `ngonngu` (`MaNgonNgu`, `TenNgonNgu`, `GhiChu`, `status`) VALUES (NULL, '$this->TenNgonNgu', '$this->GhiChu' ,'1');";
-        query($query);
+        return query($query);
     }
 
     function update()
     {
         $query = "UPDATE `ngonngu` SET  TenNgonNgu = '$this->TenNgonNgu', GhiChu = '$this->GhiChu'  WHERE MaNgonNgu = $this->MaNgonNgu";
-        query($query);
+        return query($query);
     }
 
     function delete()
     {
         $query = "update ngonngu set status = 0 where MaNgonNgu = '$this->MaNgonNgu'";
-        query($query);
+        return query($query);
     }
 
     

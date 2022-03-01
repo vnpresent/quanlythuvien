@@ -25,19 +25,19 @@ class Publish
     function save()
     {
         $query = "INSERT INTO `nhaxuatban` (`MaNXB`, `TenNXB`, `GhiChu`, `status`) VALUES (NULL, '$this->TenNXB', '$this->GhiChu' ,'1');";
-        query($query);
+        return query($query);
     }
 
     function update()
     {
         $query = "UPDATE `nhaxuatban` SET  TenNXB = '$this->TenNXB', GhiChu = '$this->GhiChu'  WHERE MaNXB = $this->MaNXB";
-        query($query);
+        return query($query);
     }
 
     function delete()
     {
         $query = "update nhaxuatban set status = 0 where MaNXB = '$this->MaNXB'";
-        query($query);
+        return query($query);
     }
 
     

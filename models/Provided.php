@@ -26,19 +26,19 @@ class Provided
     function save()
     {
         $query = "INSERT INTO `nhacungcap` (`MaNCC`, `TenNCC`, `DiaChi`, `DienThoai`, `status`) VALUES (NULL, '$this->TenNCC', '$this->DiaChi' , '$this->DienThoai','1');";
-        query($query);
+        return query($query);
     }
 
     function update()
     {
         $query = "UPDATE `nhacungcap` SET  TenNCC = '$this->TenNCC', DiaChi = '$this->DiaChi', DienThoai = '$this->DienThoai'  WHERE MaNCC = $this->MaNCC";
-        query($query);
+        return query($query);
     }
 
     function delete()
     {
         $query = "update nhacungcap set status = 0 where MaNCC = '$this->MaNCC'";
-        query($query);
+        return query($query);
     }
 
     

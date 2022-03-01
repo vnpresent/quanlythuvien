@@ -34,8 +34,11 @@ class categoryController
                     $category->$prop = $_POST[$prop];
                 }
             }
-            $category->save();
-            header('location:index.php?controller=category&action=add&result=true');
+            if($category->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=category&action=add&result='.$result);
         }
     }
 
@@ -61,8 +64,11 @@ class categoryController
                     $category->$prop = $_POST[$prop];
                 }
             }
-            $category->update();
-            header('location:index.php?controller=category&action=edit&result=true&MaTheLoai='.$_POST['MaTheLoai']);
+            if($category->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=category&action=edit&'.$result.'=true&MaTheLoai='.$_POST['MaTheLoai']);
         }
     }
 

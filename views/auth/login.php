@@ -123,7 +123,7 @@ input[type="submit"]:hover{
           <input name="password" type="password"  placeholder="Mật khẩu" required="required">
         </div>
         <div class="pass">Quên mật khẩu?</div>
-        <label for=""><?php echo isset($error) ? $error : ''; ?></label>
+        <label for=""><?php echo isset($_GET['error']) ? $_GET['error'] : ''; ?></label>
         <input type="submit" value="Đăng nhập">
         <div class="signup_link">
           <!-- Not a member? <a href="#">Signup</a> -->

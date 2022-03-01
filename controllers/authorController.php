@@ -34,8 +34,11 @@ class authorController
                     $author->$prop = $_POST[$prop];
                 }
             }
-            $author->save();
-            header('location:index.php?controller=author&action=add&result=true');
+            if($author->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=author&action=add&result='.$result);
         }
     }
 
@@ -61,8 +64,11 @@ class authorController
                     $author->$prop = $_POST[$prop];
                 }
             }
-            $author->update();
-            header('location:index.php?controller=author&action=edit&result=true&MaTG='.$_POST['MaTG']);
+            if($author->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=author&action=edit&result='.$result.'&MaTG='.$_POST['MaTG']);
         }
     }
 

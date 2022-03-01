@@ -34,8 +34,11 @@ class PositionController
                     $Position->$prop = $_POST[$prop];
                 }
             }
-            $Position->save();
-            header('location:index.php?controller=position&action=add&result=true');
+            if($Position->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=position&action=add&result='.$result);
         }
     }
 
@@ -61,8 +64,11 @@ class PositionController
                     $Position->$prop = $_POST[$prop];
                 }
             }
-            $Position->update();
-            header('location:index.php?controller=position&action=edit&result=true&MaVT='.$_POST['MaVT']);
+            if($Position->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=position&action=edit&result='.$result.'&MaVT='.$_POST['MaVT']);
         }
     }
 

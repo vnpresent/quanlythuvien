@@ -18,7 +18,6 @@ class backuprestoreController
             $backup_file = $NgayCN.'-vitri.sql';
             $sql = "SELECT * INTO OUTFILE '$backup_file' FROM vitri";
             $sql = "LOAD DATA INFILE '28-02-2022-vitri.sql' INTO TABLE vitri";
-            print($sql);
             query($sql);
 
         }
@@ -29,7 +28,6 @@ class backuprestoreController
         if(Auth::isadmin())
         {
             $sql = "LOAD DATA INFILE '28-02-2022-vitri.sql' INTO TABLE vitri";
-            print($sql);
             query($sql);
 
         }

@@ -34,8 +34,11 @@ class providedController
                     $provided->$prop = $_POST[$prop];
                 }
             }
-            $provided->save();
-            header('location:index.php?controller=provided&action=add&result=true');
+            if($provided->save())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=provided&action=add&result='.$result);
         }
     }
 
@@ -61,8 +64,11 @@ class providedController
                     $provided->$prop = $_POST[$prop];
                 }
             }
-            $provided->update();
-            header('location:index.php?controller=provided&action=edit&result=true&MaNCC='.$_POST['MaNCC']);
+            if($provided->update())
+                $result = 'true';
+            else
+                $result = 'false';
+            header('location:index.php?controller=provided&action=edit&result='.$result.'&MaNCC='.$_POST['MaNCC']);
         }
     }
 
