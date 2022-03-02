@@ -1,5 +1,6 @@
 <?php
 include_once('./config.php');
+include_once('./models/CreateCard.php');
 class CreateCard
 {
     public $MaDK = null;
@@ -35,7 +36,7 @@ class CreateCard
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $now = date("Y/m/d");
         $query = "INSERT INTO `dsdktaothe` (`MaDK`, `HoTen`, `NamSinh`, `GioiTinh`, `ChucDanh`, `MaDV`, `MaLop`, `KhoaHoc`, `DienThoai`, `Email`, `AnhThe`, `HinhThucDK`, `LoaiDK`, `NgayDK`, `KTLePhi`, `XuLy`, `status`) VALUES (NULL, '$this->HoTen', '$this->NamSinh', '$this->GioiTinh', '$this->ChucDanh', '$this->MaDV', '$this->MaLop', '$this->KhoaHoc', '$this->DienThoai', '$this->Email', '$this->AnhThe', '$this->HinhThucDK', '$this->LoaiDK', '$now', '$this->KTLePhi', 'no', '1');";
@@ -51,6 +52,12 @@ class CreateCard
     function delete()
     {
         $query = "update dsdktaothe set status = 0 where MaDK = '$this->MaDK'";
+        return query($query);
+    }
+
+    function solved()
+    {
+        $query = "update dsdktaothe set XuLy = 'yes' where MaDK = '$this->MaDK'";
         return query($query);
     }
 

@@ -37,7 +37,7 @@ class Document
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $NgayCN = date("Y/m/d");
         $query = "INSERT INTO `tailieu` (`MaTL`, `TenTL`, `MaTheLoai`, `MaDV`, `MaTG`, `MaNXB`, `NamXB`, `MaNgonNgu`, `NoiDung`, `SoTrang`, `KhoGiay`, `LanTB`, `GiaBia`, `SoPH`, `NgayPH`, `TongSo`, `MaVT`, `NgayCN`) VALUES (NULL, '$this->TenTL', '$this->MaTheLoai' , '$this->MaDV', '$this->MaTG', '$this->MaNXB', '$this->NamXB', '$this->MaNgonNgu', '$this->NoiDung', '$this->SoTrang', '$this->KhoGiay', '$this->LanTB', '$this->GiaBia', '$this->SoPH', '$this->NgayPH', '$this->TongSo', '$this->MaVT', '$NgayCN');";

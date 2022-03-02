@@ -22,7 +22,7 @@ class Publish
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $query = "INSERT INTO `nhaxuatban` (`MaNXB`, `TenNXB`, `GhiChu`, `status`) VALUES (NULL, '$this->TenNXB', '$this->GhiChu' ,'1');";
         return query($query);

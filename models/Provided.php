@@ -23,7 +23,7 @@ class Provided
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $query = "INSERT INTO `nhacungcap` (`MaNCC`, `TenNCC`, `DiaChi`, `DienThoai`, `status`) VALUES (NULL, '$this->TenNCC', '$this->DiaChi' , '$this->DienThoai','1');";
         return query($query);

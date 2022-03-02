@@ -22,7 +22,7 @@ class Language
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $query = "INSERT INTO `ngonngu` (`MaNgonNgu`, `TenNgonNgu`, `GhiChu`, `status`) VALUES (NULL, '$this->TenNgonNgu', '$this->GhiChu' ,'1');";
         return query($query);

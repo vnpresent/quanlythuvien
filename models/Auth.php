@@ -5,7 +5,7 @@ include_once('User.php');
 
 class Auth
 {
-    private static $Username = null;
+    public static $Username = null;
     private static $ChucDanh = null;
     private static $token = null;
 

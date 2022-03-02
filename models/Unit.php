@@ -22,7 +22,7 @@ class Unit
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $query = "INSERT INTO `donvi` (`MaDV`, `TenDV`, `GhiChu`, `status`) VALUES (NULL, '$this->TenDV', '$this->GhiChu' ,'1');";
         return query($query);

@@ -22,7 +22,7 @@ class Author
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $query = "INSERT INTO `tacgia` (`MaTG`, `TenTG`, `GhiChu`, `status`) VALUES (NULL, '$this->TenTG', '$this->GhiChu' ,'1');";
         return query($query);

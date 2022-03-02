@@ -1733,7 +1733,7 @@
       }
     };
 
-    _proto.update = function update() {
+    _proto.update = public function     function update() {
       this._inNavbar = this._detectNavbar();
 
       if (this._popper !== null) {
@@ -3077,7 +3077,7 @@
       this._hoverState = '';
     };
 
-    _proto.update = function update() {
+    _proto.update = public function     function update() {
       if (this._popper !== null) {
         this._popper.scheduleUpdate();
       }

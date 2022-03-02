@@ -22,7 +22,7 @@ class Grade
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $query = "INSERT INTO `lop` (`MaLop`, `TenLop`, `MaDV`, `status`) VALUES (NULL, '$this->TenLop', '$this->MaDV' ,'1');";
         return query($query);

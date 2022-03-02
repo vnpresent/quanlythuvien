@@ -22,7 +22,7 @@ class Category
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $query = "INSERT INTO `theloai` (`MaTheLoai`, `TenTheLoai`, `GhiChu`, `status`) VALUES (NULL, '$this->TenTheLoai', '$this->GhiChu' ,'1');";
         return query($query);

@@ -1,6 +1,7 @@
 <?php
 include_once('./models/Auth.php');
 include_once('./models/Reader.php');
+include_once('./models/CreateCard.php');
 class readerController
 {
 
@@ -17,6 +18,7 @@ class readerController
     {
         if(Auth::isadmin())
         {
+            $createcards = CreateCard::index();
             include_once('./views/reader/add.php');
         }
     }
@@ -44,9 +46,9 @@ class readerController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaTL']))
+        if(Auth::isadmin() && isset($_GET['SoThe']))
         {
-            $data = Reader::show($_GET['MaTL']);
+            $data = Reader::show($_GET['SoThe']);
             include_once('./views/reader/edit.php');
         }
     }
@@ -68,16 +70,16 @@ class readerController
                 $result = 'true';
             else
                 $result = 'false';
-            header('location:index.php?controller=reader&action=edit&result='.$result.'&MaTL='.$_POST['MaTL']);
+            header('location:index.php?controller=reader&action=edit&result='.$result.'&SoThe='.$_POST['SoThe']);
         }
     }
 
     public function delete()
     {
-        if(isset($_GET['MaTL']) && Auth::isadmin())
+        if(isset($_GET['SoThe']) && Auth::isadmin())
         {
             $reader = new Reader();
-            $reader->MaTL = $_GET['MaTL'];
+            $reader->SoThe = $_GET['SoThe'];
             $reader->delete();
             header('location:index.php?controller=reader');
         }

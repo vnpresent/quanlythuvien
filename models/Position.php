@@ -22,7 +22,7 @@ class Position
         return $data;
     }
 
-    function save()
+    public function save()
     {
         $query = "INSERT INTO `vitri` (`MaVT`, `TenVT`, `MoTa`, `status`) VALUES (NULL, '$this->TenVT', '$this->MoTa' ,'1');";
         return query($query);

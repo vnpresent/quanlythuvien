@@ -63,7 +63,7 @@
             </div>
             <label for="inputEmail3" class="col-1 col-form-label">MaNgonNgu</label>
             <div class="col-sm-2">
-            <select name="MaNgonNgu" class="form-control" aria-label="Default select example">
+                <select name="MaNgonNgu" class="form-control" aria-label="Default select example">
                 <?php
                         foreach($languages as $language)
                         {
