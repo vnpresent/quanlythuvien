@@ -8,13 +8,13 @@ class authController
 
     public function index()
     {
-        // không là hiện form login
+        //
         include_once('./views/auth/dashboard.php');
     }
 
     public function login()
     {
-        // không là hiện form login
+        //hiện form login
         include_once('./views/auth/login.php');
     }
 
@@ -37,7 +37,7 @@ class authController
     public function logout()
     {
         Auth::logout();
-        header('location:index.php?controller=auth&action=index');
+        header('location:index.php?controller=auth');
     }
 }
 ?>
