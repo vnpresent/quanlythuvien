@@ -8,7 +8,7 @@
             <tr class="border-dark">
                 <th>MaVT</th>
                 <th>Tên vị trí</th>
-                <th>Ghi chú</th>
+                <th>Mô tả</th>
                 <th style="width: 23%;">Hành động</th>
             </tr>
         </thead>
@@ -20,7 +20,7 @@
                         echo "<tr>";
                         echo "<td class=\"border-dark\" scope=\"row\">" . $document['MaVT'] . "</td>";
                         echo "<td class=\"border-dark\">" . $document['TenVT'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['GhiChu'] . "</td>";
+                        echo "<td class=\"border-dark\">" . $document['MoTa'] . "</td>";
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=position&action=edit&MaVT=' . $document['MaVT'] . '"><i class="fas fa-edit"></i></a>';
                         echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa?\')" href="index.php?controller=position&action=delete&MaVT=' . $document['MaVT'] . '"><i class="fas fa-trash"></i></a>';

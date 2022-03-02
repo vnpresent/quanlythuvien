@@ -12,9 +12,9 @@
         </div>
         
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Ghi chú</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Mô tả</label>
             <div class="col-sm-6">
-                <input type="text" name="GhiChu"  class="form-control" required="required" value="<?php echo $data['MoTa'] ?>">
+                <input type="text" name="MoTa"  class="form-control" required="required" value="<?php echo $data['MoTa'] ?>">
             </div>
         </div>
 
