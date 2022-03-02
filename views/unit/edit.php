@@ -1,18 +1,19 @@
-<div class="container col-10">
+<div class="container-fluid" style="padding-top:20px">
+    <h2>Chỉnh sửa đơn vị</h2>
     <form action="index.php?controller=unit&action=update" method="post">
 
         <input type="text" hidden name="MaDV" class="form-control" required="required" value="<?php echo $data['MaDV'] ?>">
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">TenDV</label>
-            <div class="col-sm-8">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tên đơn vị</label>
+            <div class="col-sm-6">
                 <input type="text" name="TenDV" class="form-control" required="required" value="<?php echo $data['TenDV'] ?>">
             </div>
         </div>
         
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">GhiChu</label>
-            <div class="col-sm-8">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Ghi chú</label>
+            <div class="col-sm-6">
                 <input type="text" name="GhiChu"  class="form-control" required="required" value="<?php echo $data['GhiChu'] ?>">
             </div>
         </div>
@@ -25,8 +26,12 @@
 
         <div class="form-group row mx-auto">
             <div class="col-sm-2"></div>
+            <div class="col-sm-6">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary"> Cập Nhật</button>
             <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=unit" role="button">Thoát</a>
+            </div>
+            </div>
         </div>
     </form>
 </div>

@@ -71,6 +71,9 @@
   border: none;
   padding: 20px 30px;
 }
+.list-group .list-group-item :hover {
+  color: #009d63 !important;
+}
 
 .list-group-item.active {
   background-color: transparent;

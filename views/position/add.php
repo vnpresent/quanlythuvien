@@ -1,16 +1,17 @@
-<div class="container col-10">
+<div class="container-fluid" style="padding-top:20px">
+    <h2>thêm vị trí sách</h2>
     <form action="index.php?controller=position&action=insert" method="post">
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">TenVT</label>
-            <div class="col-sm-8">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tên vị trí</label>
+            <div class="col-sm-6">
                 <input type="text" name="TenVT" class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">MoTa</label>
-            <div class="col-sm-8">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Ghi chú</label>
+            <div class="col-sm-6">
                 <input type="text" name="MoTa"  class="form-control" required="required">
             </div>
         </div>
@@ -23,8 +24,12 @@
 
         <div class="form-group row mx-auto">
             <div class="col-sm-2"></div>
+            <div class="col-sm-6">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Thêm</button>
             <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=position" role="button">Thoát</a>
+            </div>
+            </div>
         </div>
     </form>
 </div>
