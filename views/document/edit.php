@@ -1,6 +1,6 @@
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=document&action=update" method="post">
-    <h2>Cập nhật tài liệu</h2>
+    <h2>Chỉnh sửa tài liệu</h2>
         <input type="text" hidden name="MaTL" class="form-control" required="required" value="<?php echo $data['MaTL'] ?>">
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">TenTL</label>

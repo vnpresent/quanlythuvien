@@ -1,11 +1,14 @@
-<div class="container col-10">
-    <table class="table table-bordered col-12 mx-auto">
+<div class="container-fluid" style="padding-top:20px">
+<h2>Ngôn ngữ</h2>
+    <table class="table table-striped bg-white rounded shadow-sm  table-hover">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a name="" id="" class="btn btn-primary" href="index.php?controller=language&action=add" role="button">Thêm</a>
-        <thead class="bg-dark text-white">
+    </div> 
+        <thead class="bg-info text-white">
             <tr class="border-dark">
                 <th>MaNgonNgu</th>
-                <th>TenNgonNgu</th>
-                <th>GhiChu</th>
+                <th>Tên ngôn ngữ</th>
+                <th>Ghi chú</th>
                 <th style="width: 23%;">Hành động</th>
             </tr>
         </thead>
@@ -19,8 +22,8 @@
                         echo "<td class=\"border-dark\">" . $document['TenNgonNgu'] . "</td>";
                         echo "<td class=\"border-dark\">" . $document['GhiChu'] . "</td>";
                         echo '<td class="border-dark">';
-                        echo '<a href="index.php?controller=language&action=edit&MaNgonNgu=' . $document['MaNgonNgu'] . '">Sửa</a>';
-                        echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa?\')" href="index.php?controller=language&action=delete&MaNgonNgu=' . $document['MaNgonNgu'] . '">Xóa</a>';
+                        echo '<a href="index.php?controller=language&action=edit&MaNgonNgu=' . $document['MaNgonNgu'] . '"><i class="fas fa-edit"></i></a>';
+                        echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa?\')" href="index.php?controller=language&action=delete&MaNgonNgu=' . $document['MaNgonNgu'] . '"><i class="fas fa-trash"></i></a>';
                         echo "</tr>";
                     }
                 }
