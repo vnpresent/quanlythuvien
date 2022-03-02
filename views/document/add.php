@@ -2,14 +2,14 @@
     <form action="index.php?controller=document&action=insert" method="post">
         <h2>Thêm tài liệu</h2>
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">TenTL</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tên tài liệu</label>
             <div class="col-sm-8">
                 <input type="text" name="TenTL" class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">MaTheLoai</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Thể loại</label>
             <div class="col-sm-2">
                 <!-- <input type="text" name="MaTheLoai"  class="form-control" required="required"> -->
                 <select name="MaTheLoai" class="form-control" aria-label="Default select example">
@@ -22,7 +22,7 @@
                 </select>
             </div>
 
-            <label for="inputEmail3" class="col-1 col-form-label">MaDV</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Đơn vị</label>
             <div class="col-sm-2">
                 <select name="MaDV" class="form-control" aria-label="Default select example">
                 <?php
@@ -34,7 +34,7 @@
                 </select>
             </div>
 
-            <label for="inputEmail3" class="col-1 col-form-label">MaTG</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Tác giả</label>
             <div class="col-sm-2">
                 <select name="MaTG" class="form-control" aria-label="Default select example">
                 <?php
@@ -49,7 +49,7 @@
 
         <div class="form-group row">
 
-            <label for="inputEmail3" class="col-sm-2  col-form-label">MaNXB</label>
+            <label for="inputEmail3" class="col-sm-2  col-form-label">Nhà xuất bản</label>
             <div class="col-sm-2">
                 <!-- <input type="text" name="MaNXB"  class="form-control" required="required"> -->
                 <select name="MaNXB" class="form-control" aria-label="Default select example">
@@ -67,7 +67,7 @@
                 <input type="text" name="NamXB"  class="form-control" required="required">
             </div>
 
-            <label for="inputEmail3" class="col-1 col-form-label">MaNgonNgu</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Ngôn ngữ</label>
             <div class="col-sm-2">
                 <select name="MaNgonNgu" class="form-control" aria-label="Default select example">
                 <?php
@@ -118,7 +118,7 @@
             <div class="col-sm-3">
                 <input type="text" name="TongSo"  class="form-control" required="required">
             </div>
-            <label for="inputEmail3" class="col-1 col-form-label">MaVT</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Vị trí</label>
             <div class="col-sm-4">
                 <select name="MaVT" class="form-control" aria-label="Default select example">
                 <?php
