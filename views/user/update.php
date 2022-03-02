@@ -1,6 +1,6 @@
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=user&action=update&id=<?php echo $data['id']; ?>" method="post">
-    <h2>Cập nhật người dùng</h2>
+    <h2>Chỉnh sửa tài khoản</h2>
     <input type="text" hidden name="id" class="form-control" value="<?php echo $data['id']; ?>">
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
@@ -10,19 +10,19 @@
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">HoTen</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Họ tên</label>
             <div class="col-sm-4">
                 <input type="text" name="HoTen" class="form-control" value="<?php echo $data['HoTen']; ?>" required="required">
             </div>
 
-            <label for="inputEmail3" class="col-1 col-form-label">NamSinh</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Năm sinh</label>
             <div class="col-sm-3">
                 <input type="date" name="NamSinh" class="form-control" value="<?php echo $data['NamSinh']; ?>" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">GioiTinh</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Giới tính</label>
             <div class="col-sm-4">
                 <!-- <input type="text" name="GioiTinh" class="form-control" value="<?php echo $data['GioiTinh']; ?>" required="required"> -->
                 <input type="radio" name="GioiTinh" value="Nam" <?php  if($data['GioiTinh'] === 'Nam') echo 'checked'; ?>>Nam
@@ -38,7 +38,7 @@
 
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">DienThoai</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Điện thoại</label>
             <div class="col-sm-8">
                 <input type="text" name="DienThoai" class="form-control" value="<?php echo $data['DienThoai']; ?>" required="required">
             </div>

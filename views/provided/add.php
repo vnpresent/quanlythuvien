@@ -1,22 +1,23 @@
-<div class="container col-10">
+<div class="container-fluid" style="padding-top:20px">
+<h2>Thêm nhà cung cấp</h2>
     <form action="index.php?controller=provided&action=insert" method="post">
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">TenNCC</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tên nhà cung cấp</label>
             <div class="col-sm-8">
                 <input type="text" name="TenNCC" class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">DiaChi</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Địa chỉ</label>
             <div class="col-sm-8">
                 <input type="text" name="DiaChi"  class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">DienThoai</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Điện thoại</label>
             <div class="col-sm-8">
                 <input type="text" name="DienThoai"  class="form-control" required="required">
             </div>
@@ -30,8 +31,12 @@
 
         <div class="form-group row mx-auto">
             <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Thêm</button>
             <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=provided" role="button">Thoát</a>
+            </div>
+            </div>
         </div>
     </form>
 </div>

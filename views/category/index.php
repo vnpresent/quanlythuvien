@@ -1,14 +1,14 @@
 <div class="container-fluid" style="padding-top:20px">
-    <h2>Tài liệu</h2>
+    <h2>Thể loại</h2>
     <table class="table table-striped bg-white rounded shadow-sm  table-hover">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a name="" id="" class="btn btn-info" href="index.php?controller=category&action=add" role="button" style="margin-bottom:10px">Thêm</a>
         </div>
         <thead class="bg-info text-white">
             <tr class="border-dark">
-                <th>MaTheLoai</th>
-                <th>TenTheLoai</th>
-                <th>GhiChu</th>
+                <th>Mã thể loại</th>
+                <th>Tên thể loại</th>
+                <th>Ghi chú</th>
                 <th style="width: 23%;">Hành động</th>
             </tr>
         </thead>
