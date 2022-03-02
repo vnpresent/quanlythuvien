@@ -13,7 +13,7 @@
                 <th>Chức danh</th>
                 <th>Email</th>
                 <th>Điện thoại</th>
-                <th style="width: 23%;">Hành động</th>
+                <th style="width: 10%;">Hành động</th>
             </tr>
         </thead>
         <tbody>
