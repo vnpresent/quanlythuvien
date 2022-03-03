@@ -1,10 +1,5 @@
 # Nguyen Viet Phuong + 
 Web được viết theo mô hình MVC
-// Các bảng trong db
-
-`user` (`id`, `username`, `password`,`name`, `level`, `token`, `status`)
-
-
 
 //Cách thức hoạt động của mô hình MVC:
 
