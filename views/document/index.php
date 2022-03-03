@@ -21,9 +21,9 @@
                 <th>GiaBia</th>
                 <th>SoPH</th>
                 <th>NgayPH</th>
-                <th>TongSo</th>
+                <th>TongSo</th> -->
                 <th>MaVT</th>
-                <th>NgayCN</th> -->
+                <!-- <th>NgayCN</th> -->
                 <th style="width: 10%;">Hành động</th>
             </tr>
         </thead>
@@ -49,7 +49,7 @@
                         // echo "<td class=\"border-dark\">" . $document['SoPH'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['NgayPH'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['TongSo'] . "</td>";
-                        // echo "<td class=\"border-dark\">" . $document['MaVT'] . "</td>";
+                        echo "<td class=\"border-dark\">" . $document['MaVT'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['NgayCN'] . "</td>";
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=document&action=edit&MaTL=' . $document['MaTL'] . '"><i class="fas fa-edit"></i></a>';
@@ -57,6 +57,7 @@
                         echo '<a class="ml-3" onclick="return " href="index.php?controller=documentdetail&action=index&MaTL=' . $document['MaTL'] . '"><i class="fas fa-eye"></i></a>';
                         echo "</tr>";
                     }
+                    
                 }
             }
             ?>
