@@ -10,7 +10,7 @@ class Position
 
     public static function index()
     {
-        $query = "select * from vitri";
+        $query = "select * from vitri  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

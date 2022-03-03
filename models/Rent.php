@@ -17,7 +17,7 @@ class Rent
 
     public static function index()
     {
-        $query = "select * from muontra";
+        $query = "select * from muontra  where status = '1'";
         $data = getalldata($query);
         return $data;
     }
@@ -33,6 +33,13 @@ class Rent
     {
         $query = "select * from muontra where SoThe = '$SoThe' and MaCaBiet = '$MaCaBiet'";
         $data = getonedata($query);
+        return $data;
+    }
+
+    public static function search($keyword)
+    {
+        $query = "SELECT dsdktaothe.HoTen,muontra.MaCaBiet,muontra.NgayMuon,muontra.HanTra FROM muontra,docgia,dsdktaothe WHERE dsdktaothe.HoTen like '%$keyword%' AND dsdktaothe.MaDK = docgia.MaDK AND docgia.SoThe = muontra.SoThe AND muontra.Loai = 'muon';";
+        $data = getalldata($query);
         return $data;
     }
 

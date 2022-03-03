@@ -11,7 +11,7 @@ class Provided
 
     public static function index()
     {
-        $query = "select * from nhacungcap";
+        $query = "select * from nhacungcap  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

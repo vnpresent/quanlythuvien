@@ -36,6 +36,13 @@ class CreateCard
         return $data;
     }
 
+    public static function search($keyword)
+    {
+        $query = "select MaDK,HoTen,NamSinh,GioiTinh from dsdktaothe where HoTen like '%$keyword%' and XuLy = 'yes'";
+        $data = getalldata($query);
+        return $data;
+    }
+
     public function save()
     {
         $now = date("Y/m/d");

@@ -10,7 +10,7 @@ class Category
 
     public static function index()
     {
-        $query = "select * from theloai";
+        $query = "select * from theloai  where status = '1'";
         $data = getalldata($query);
         return $data;
     }
