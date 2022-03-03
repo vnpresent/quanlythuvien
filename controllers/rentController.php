@@ -79,52 +79,37 @@ class rentController
         }
     }
 
-    public function back()
-    {
-        if(Auth::isadmin())
-        {
-            include_once('./views/rent/back.php');
-        }
-    }
-
-    public function rentinfo()
-    {
-        if(Auth::isadmin() && isset($_POST['MaCaBiet']) && isset($_POST['SoThe']))
-        {
-            print($_POST['MaCaBiet'].':'.$_POST['SoThe']);
-            $data = array();
-            $arr = explode("\r\n", trim($_POST['MaCaBiet']));
-            foreach($arr as $ma)
-            {
-                array_push($data,Rent::find($_POST['SoThe'],$ma));
-            }
-            include_once('./views/rent/rentinfo.php');
-        }
-    }
-
-    public function return()
-    {
-        if(isset($_GET['SoThe']) && isset($_GET['MaCaBiet']) && Auth::isadmin())
-        {
-            $rent = new Rent();
-            $rent->MaCaBiet = $_GET['MaCaBiet'];
-            $rent->SoThe = $_GET['SoThe'];
-            $rent->return();
-            header('location:index.php?controller=rent');
-        }
-        else
-        {
-            header('location:index.php');
-        }
-    }
-
-    // public function delete()
+    // public function back()
     // {
-    //     if(isset($_GET['ID_MuonTra']) && Auth::isadmin())
+    //     if(Auth::isadmin())
+    //     {
+    //         include_once('./views/rent/back.php');
+    //     }
+    // }
+
+    // public function rentinfo()
+    // {
+    //     if(Auth::isadmin() && isset($_POST['MaCaBiet']) && isset($_POST['SoThe']))
+    //     {
+    //         print($_POST['MaCaBiet'].':'.$_POST['SoThe']);
+    //         $data = array();
+    //         $arr = explode("\r\n", trim($_POST['MaCaBiet']));
+    //         foreach($arr as $ma)
+    //         {
+    //             array_push($data,Rent::find($_POST['SoThe'],$ma));
+    //         }
+    //         include_once('./views/rent/rentinfo.php');
+    //     }
+    // }
+
+    // public function return()
+    // {
+    //     if(isset($_GET['SoThe']) && isset($_GET['MaCaBiet']) && Auth::isadmin())
     //     {
     //         $rent = new Rent();
-    //         $rent->ID_MuonTra = $_GET['ID_MuonTra'];
-    //         $rent->delete();
+    //         $rent->MaCaBiet = $_GET['MaCaBiet'];
+    //         $rent->SoThe = $_GET['SoThe'];
+    //         $rent->return();
     //         header('location:index.php?controller=rent');
     //     }
     //     else
@@ -132,5 +117,20 @@ class rentController
     //         header('location:index.php');
     //     }
     // }
+
+    public function delete()
+    {
+        if(isset($_GET['ID_MuonTra']) && Auth::isadmin())
+        {
+            $rent = new Rent();
+            $rent->ID_MuonTra = $_GET['ID_MuonTra'];
+            $rent->delete();
+            header('location:index.php?controller=rent');
+        }
+        else
+        {
+            header('location:index.php');
+        }
+    }
 }
 ?>

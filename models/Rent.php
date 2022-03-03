@@ -59,19 +59,19 @@ class Rent
         return query($query);
     }
 
-    function return()
+    function delete()
     {
         $Ngay= date("Y/m/d");
         $user = Auth::$Username;
-        $query = "UPDATE `muontra` SET NgayTra = '$Ngay', NguoiNhan = '$user', Loai = 'tra'  WHERE SoThe = '$this->SoThe' and MaCaBiet = '$this->MaCaBiet'";
+        $query = "UPDATE `muontra` SET NgayTra = '$Ngay', NguoiNhan = '$user', Loai = 'tra'  WHERE ID_MuonTra = '$this->ID_MuonTra'";
         return query($query);
     }
 
-    function delete()
-    {
-        $query = "update muontra set status = 0 where ID_MuonTra = '$this->ID_MuonTra'";
-        return query($query);
-    }
+    // function delete()
+    // {
+    //     $query = "update muontra set status = 0 where ID_MuonTra = '$this->ID_MuonTra'";
+    //     return query($query);
+    // }
 
     
 }

@@ -35,12 +35,12 @@
                         echo "<tr>";
                         echo "<td class=\"border-dark\" scope=\"row\">" . $document['MaTL'] . "</td>";
                         echo "<td class=\"border-dark\" scope=\"row\">" . $document['TenTL'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['MaTheLoai'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['MaDV'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['MaTG'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['MaNXB'] . "</td>";
+                        echo "<td class=\"border-dark\">" . Category::show($document['MaTheLoai'])["TenTheLoai"] . "</td>";
+                        echo "<td class=\"border-dark\">" . Unit::show($document['MaDV'])["TenDV"] . "</td>";
+                        echo "<td class=\"border-dark\">" . Author::show($document['MaTG'])["TenTG"] . "</td>";
+                        echo "<td class=\"border-dark\">" . Publish::show($document['MaNXB'])["TenNXB"] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['NamXB'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['MaNgonNgu'] . "</td>";
+                        echo "<td class=\"border-dark\">" .Language::show($document['MaNgonNgu'])["TenNgonNgu"] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['NoiDung'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['SoTrang'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['KhoGiay'] . "</td>";
@@ -49,7 +49,7 @@
                         // echo "<td class=\"border-dark\">" . $document['SoPH'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['NgayPH'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['TongSo'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['MaVT'] . "</td>";
+                        echo "<td class=\"border-dark\">" .Position::show($document['MaVT'])["TenVT"]  . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['NgayCN'] . "</td>";
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=document&action=edit&MaTL=' . $document['MaTL'] . '"><i class="fas fa-edit"></i></a>';
