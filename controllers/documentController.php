@@ -7,6 +7,12 @@ include_once('./models/Language.php');
 include_once('./models/Author.php');
 include_once('./models/Position.php');
 include_once('./models/Unit.php');
+
+if( !(Auth::isAdmin() || Auth::isKyThuat()))
+{
+    header('location:index.php');
+}
+
 class documentController
 {
 
