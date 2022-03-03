@@ -1,30 +1,30 @@
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=breach&action=insert" method="post">
-        <h2>Thêm tác giả</h2>
+        <h2>Thêm </h2>
         
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">SoThe</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Số thẻ</label>
             <div class="col-sm-6">
                 <input type="text" name="SoThe"  class="form-control" required="required">
             </div>
         </div>
         
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">LyDoVP</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Lý do vi phạm</label>
             <div class="col-sm-6">
                 <input type="text" name="LyDoVP"  class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">HTXuLy</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Xử lý</label>
             <div class="col-sm-6">
                 <input type="text" name="HTXuLy"  class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">NgayMoThe</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Ngày mở thẻ</label>
             <div class="col-sm-6">
                 <input type="date" name="NgayMoThe"  class="form-control" required="required">
             </div>

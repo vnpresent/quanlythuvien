@@ -1,5 +1,5 @@
 <div class="container-fluid" style="padding-top:20px">
-    <h2>Tài liệu</h2>
+    <h2>Trả tài liệu</h2>
     <table class="table table-striped bg-white rounded shadow-sm  table-hover">
         <thead class="bg-info text-white">
             <tr class="border-dark">

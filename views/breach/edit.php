@@ -4,28 +4,28 @@
         <input type="text" hidden name="IDPhat" class="form-control" required="required" value="<?php echo $data['IDPhat'] ?>">
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">SoThe</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Số thẻ</label>
             <div class="col-sm-8">
                 <input type="text" name="SoThe" class="form-control" required="required" value="<?php echo $data['SoThe'] ?>">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">LyDoVP</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Lý do vi phạm</label>
             <div class="col-sm-8">
                 <input type="text" name="LyDoVP" class="form-control" required="required" value="<?php echo $data['LyDoVP'] ?>">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">HTXuLy</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Xử lý</label>
             <div class="col-sm-8">
                 <input type="text" name="HTXuLy" class="form-control" required="required" value="<?php echo $data['HTXuLy'] ?>">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">NgayMoThe</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Ngày mở thẻ</label>
             <div class="col-sm-8">
                 <input type="date" name="NgayMoThe" class="form-control" required="required" value="<?php echo $data['NgayMoThe'] ?>">
             </div>

@@ -58,7 +58,7 @@
                     echo "<td class=\"border-dark\">" . $rent['NguoiNhan'] . "</td>";
                     echo '<td class="border-dark">';
                     echo '<a  href="index.php?controller=rent&action=edit&ID_MuonTra=' . $rent['ID_MuonTra'] . '"><i class="fas fa-edit"></i></a>';
-                    echo '<a class="ml-3" href="index.php?controller=rent&action=rentinfo&ID_MuonTra=' . $rent['ID_MuonTra'] . '"><i class="fas fa-eye"></i></a>';
+                    echo '<a class="ml-3" href="index.php?controller=rent&action=rentinfo&ID_MuonTra=' . $rent['ID_MuonTra'] . '">Trả</a>';
                     echo "</tr>";              
                 }
             }

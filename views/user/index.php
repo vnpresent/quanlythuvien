@@ -32,6 +32,7 @@
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=user&action=edit&id=' . $user['id'] . '"><i class="fas fa-edit"></i></a>';
                         echo '<a class="ml-3" href="index.php?controller=user&action=editper&id=' . $user['id'] . '"><i class="fas fa-exchange-alt"></i></a>';
+                        echo '<a class="ml-3" href="index.php?controller=user&action=password&id=' . $user['id'] . '"><i class="fas fa-key"></i></a>';
                         echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa tài khoản này không?\')" href="index.php?controller=user&action=delete&id=' . $user['id'] . '"><i class="fas fa-trash"></i></a>';
                         echo "</tr>";
                     }
