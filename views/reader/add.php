@@ -1,10 +1,9 @@
 <div class="container-fluid" style="padding-top:20px">
+<h2>Thêm độc giả</h2>
     <form action="index.php?controller=reader&action=insert" method="post">
-        <h2>Thêm</h2>
-
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">MaDK</label>
-            <div class="col-sm-5">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">MaDK</label>
+            <div class="col-sm-6">
                 <select name="MaDK" class="form-control" aria-label="Default select example">
                     <?php
                         foreach($createcards as $createcard)
@@ -17,27 +16,27 @@
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">AnhBarcode</label>
-            <div class="col-sm-5">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">AnhBarcode</label>
+            <div class="col-sm-6">
                 <input type="text" name="AnhBarcode" class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">HSD</label>
-            <div class="col-sm-5">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Hạn sử dụng</label>
+            <div class="col-sm-6">
             <input type="date" name="HSD" class="form-control" required="required">
 
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">TinhTrang</label>
-            <div class="col-sm-5">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tình trạng</label>
+            <div class="col-sm-6">
                 <input type="text" name="TinhTrang" class="form-control" required="required">
             </div>
         </div>
-</div>
+
 
 <div class="form-group row">
     <div class="col-sm-5"></div>
@@ -46,8 +45,8 @@
 </div>
 
 <div class="form-group row mx-auto">
-    <div class="col-sm-5"></div>
-    <div class="col-sm-8">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-6">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Thêm</button>
             <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=reader" role="button">Thoát</a>

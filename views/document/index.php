@@ -7,24 +7,24 @@
         <thead class="bg-info text-white">
             <tr class="border-dark">
                 <th>MaTL</th>
-                <th>TenTL</th>
-                <th>MaTheLoai</th>
-                <!-- <th>MaDV</th>
-                <th>MaTG</th> -->
-                <th>MaNXB</th>
-                <!-- <th>NamXB</th>
-                <th>MaNgonNgu</th> -->
-                <!-- <th>NoiDung</th> -->
-                <!-- <th>SoTrang</th>
-                <th>KhoGiay</th> -->
+                <th>Tên tài liệu</th>
+                <th>Thể loại</th>
+                <th>Đơn vị</th>
+                <th>Tác giả</th>
+                <th>Nhà xuất bản</th>
+                <!-- <th>NamXB</th> -->
+                <th>Ngôn ngữ</th>
+                <!-- <th>NoiDung</th>
+                <th>SoTrang</th>
+                <th>KhoGiay</th>
                 <th>LanTB</th>
                 <th>GiaBia</th>
                 <th>SoPH</th>
                 <th>NgayPH</th>
-                <th>TongSo</th>
-                <!-- <th>MaVT</th> -->
-                <th>NgayCN</th>
-                <th style="width: 23%;">Hành động</th>
+                <th>TongSo</th> -->
+                <th>MaVT</th>
+                <!-- <th>NgayCN</th> -->
+                <th style="width: 10%;">Hành động</th>
             </tr>
         </thead>
         <tbody>
@@ -36,27 +36,28 @@
                         echo "<td class=\"border-dark\" scope=\"row\">" . $document['MaTL'] . "</td>";
                         echo "<td class=\"border-dark\" scope=\"row\">" . $document['TenTL'] . "</td>";
                         echo "<td class=\"border-dark\">" . $document['MaTheLoai'] . "</td>";
-                        // echo "<td class=\"border-dark\">" . $document['MaDV'] . "</td>";
-                        // echo "<td class=\"border-dark\">" . $document['MaTG'] . "</td>";
+                        echo "<td class=\"border-dark\">" . $document['MaDV'] . "</td>";
+                        echo "<td class=\"border-dark\">" . $document['MaTG'] . "</td>";
                         echo "<td class=\"border-dark\">" . $document['MaNXB'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['NamXB'] . "</td>";
-                        // echo "<td class=\"border-dark\">" . $document['MaNgonNgu'] . "</td>";
+                        echo "<td class=\"border-dark\">" . $document['MaNgonNgu'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['NoiDung'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['SoTrang'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['KhoGiay'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['LanTB'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['GiaBia'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['SoPH'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['NgayPH'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['TongSo'] . "</td>";
-                        // echo "<td class=\"border-dark\">" . $document['MaVT'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $document['NgayCN'] . "</td>";
+                        // echo "<td class=\"border-dark\">" . $document['LanTB'] . "</td>";
+                        // echo "<td class=\"border-dark\">" . $document['GiaBia'] . "</td>";
+                        // echo "<td class=\"border-dark\">" . $document['SoPH'] . "</td>";
+                        // echo "<td class=\"border-dark\">" . $document['NgayPH'] . "</td>";
+                        // echo "<td class=\"border-dark\">" . $document['TongSo'] . "</td>";
+                        echo "<td class=\"border-dark\">" . $document['MaVT'] . "</td>";
+                        // echo "<td class=\"border-dark\">" . $document['NgayCN'] . "</td>";
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=document&action=edit&MaTL=' . $document['MaTL'] . '"><i class="fas fa-edit"></i></a>';
                         echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa tài khoản này không?\')" href="index.php?controller=document&action=delete&MaTL=' . $document['MaTL'] . '"><i class="fas fa-trash"></i></a>';
-                        echo '<a class="ml-3" onclick="return " href="#' . $document['MaTL'] . '"><i class="fas fa-eye"></i></a>';
+                        echo '<a class="ml-3" onclick="return " href="index.php?controller=documentdetail&action=index&MaTL=' . $document['MaTL'] . '"><i class="fas fa-eye"></i></a>';
                         echo "</tr>";
                     }
+                    
                 }
             }
             ?>

@@ -1,9 +1,9 @@
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=enter&action=insert" method="post">
-        <h2>Thêm</h2>
+        <h2>Thêm phiếu nhập</h2>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">MaTL</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Mã tài liệu</label>
             <div class="col-sm-5">
                 <select name="MaTL" class="form-control" aria-label="Default select example">
                     <?php
@@ -17,7 +17,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">MaNCC</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Mã nhà cung cấp</label>
             <div class="col-sm-5">
                 <select name="MaNCC" class="form-control" aria-label="Default select example">
                     <?php
@@ -31,13 +31,13 @@
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">Soluong</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Số lượng</label>
             <div class="col-sm-5">
             <input type="number" name="Soluong" class="form-control" required="required">
 
             </div>
         </div>
-</div>
+
 
 <div class="form-group row">
     <div class="col-sm-5"></div>
@@ -46,8 +46,8 @@
 </div>
 
 <div class="form-group row mx-auto">
-    <div class="col-sm-5"></div>
-    <div class="col-sm-8">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-5">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Thêm</button>
             <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=enter" role="button">Thoát</a>

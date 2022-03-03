@@ -17,7 +17,7 @@ class Rent
 
     public static function index()
     {
-        $query = "select * from muontra";
+        $query = "select * from muontra ";
         $data = getalldata($query);
         return $data;
     }

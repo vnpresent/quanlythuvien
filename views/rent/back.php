@@ -1,18 +1,18 @@
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=rent&action=rentinfo" method="post">
-        <h2>Thêm</h2>
+        <h2>Trả tài liệu</h2>
         
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">SoThe</label>
-            <div class="col-sm-2">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Số thẻ</label>
+            <div class="col-sm-6">
                 <input type="text" name="SoThe"  class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">MaCaBiet</label>
-            <div class="col-sm-2">
-                <textarea name="MaCaBiet" id="" cols="30" rows="10"></textarea>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Mã cá biệt</label>
+            <div class="col-sm-6">
+                <textarea name="MaCaBiet" id="" cols="80" rows="10"></textarea>
             </div>
         </div>
 
@@ -24,7 +24,7 @@
 
         <div class="form-group row mx-auto">
             <div class="col-sm-2"></div>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Trả</button>
             <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=rent" role="button">Thoát</a>

@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">MaTheLoai</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Thể loại</label>
             <div class="col-sm-2">
                 <!-- <input type="text" name="MaTheLoai"  class="form-control" required="required" value=""> -->
                 <select name="MaTheLoai" class="form-control" aria-label="Default select example">
@@ -21,7 +21,7 @@
                     ?>
                 </select>
             </div>
-            <label for="inputEmail3" class="col-1 col-form-label">MaDV</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Đơn vị</label>
             <div class="col-sm-2">
                 <select name="MaDV" class="form-control" aria-label="Default select example">
                 <?php
@@ -32,7 +32,7 @@
                     ?>
                 </select>
             </div>
-            <label for="inputEmail3" class="col-1 col-form-label">MaTG</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Tác giả</label>
             <div class="col-sm-2">
             <select name="MaTG" class="form-control" aria-label="Default select example">
                 <?php
@@ -46,7 +46,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">MaNXB</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Nhà xuất bản</label>
             <div class="col-sm-2">
             <select name="MaNXB" class="form-control" aria-label="Default select example">
                 <?php
@@ -57,11 +57,11 @@
                     ?>
                 </select>
             </div>
-            <label for="inputEmail3" class="col-1 col-form-label">NamXB</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Năm xuất bản</label>
             <div class="col-sm-2">
                 <input type="text" name="NamXB"  class="form-control" required="required" value="<?php echo $data['NamXB'] ?>">
             </div>
-            <label for="inputEmail3" class="col-1 col-form-label">MaNgonNgu</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Ngôn ngữ</label>
             <div class="col-sm-2">
                 <select name="MaNgonNgu" class="form-control" aria-label="Default select example">
                 <?php
@@ -77,15 +77,15 @@
 
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">SoTrang</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Số trang</label>
             <div class="col-sm-2">
                 <input type="text" name="SoTrang"  class="form-control" required="required" value="<?php echo $data['SoTrang'] ?>">
             </div>
-            <label for="inputEmail3" class="col-1 col-form-label">KhoGiay</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Khổ giấy</label>
             <div class="col-sm-2">
                 <input type="text" name="KhoGiay"  class="form-control" required="required" value="<?php echo $data['KhoGiay'] ?>">
             </div>
-            <label for="inputEmail3" class="col-1 col-form-label">LanTB</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Lần tái bản</label>
             <div class="col-sm-2">
                 <input type="text" name="LanTB"  class="form-control" required="required" value="<?php echo $data['LanTB'] ?>">
             </div>
@@ -107,11 +107,11 @@
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">TongSo</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tổng số</label>
             <div class="col-sm-3">
                 <input type="text" name="TongSo"  class="form-control" required="required" value="<?php echo $data['TongSo'] ?>">
             </div>
-            <label for="inputEmail3" class="col-1 col-form-label">MaVT</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Vị trí</label>
             <div class="col-sm-4">
             <select name="MaVT" class="form-control" aria-label="Default select example">
                 <?php
@@ -125,7 +125,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label" >NoiDung</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label" >Nội dung</label>
             <div class="col-sm-8">
                 <textarea type="text" name="NoiDung"  class="form-control" required="required" value="<?php echo $data['NoiDung'] ?>" style="height: 100px"><?php echo $data['NoiDung'] ?></textarea>
             </div>

@@ -1,15 +1,15 @@
-<div class="container-fluid" style="padding-top:20px">
+<div class="container-fluid" style="padding-top:20px" >
 <h2>Ngôn ngữ</h2>
     <table class="table table-striped bg-white rounded shadow-sm  table-hover">
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a name="" id="" class="btn btn-primary" href="index.php?controller=language&action=add" role="button">Thêm</a>
+        <a name="" id="" class="btn btn-primary" href="index.php?controller=language&action=add" role="button" style="margin-bottom:10px">Thêm</a>
     </div> 
         <thead class="bg-info text-white">
             <tr class="border-dark">
                 <th>MaNgonNgu</th>
                 <th>Tên ngôn ngữ</th>
                 <th>Ghi chú</th>
-                <th style="width: 23%;">Hành động</th>
+                <th style="width: 10%;">Hành động</th>
             </tr>
         </thead>
         <tbody>

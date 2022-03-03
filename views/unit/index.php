@@ -9,7 +9,7 @@
                 <th>MaDV</th>
                 <th>Tên đơn vị</th>
                 <th>Ghi chú</th>
-                <th style="width: 23%;">Hành động</th>
+                <th style="width: 10%;">Hành động</th>
             </tr>
         </thead>
         <tbody>

@@ -10,7 +10,7 @@
                 <th>Tên nhà cung cấp</th>
                 <th>Địa chỉ</th>
                 <th>Điện thoại</th>
-                <th style="width: 23%;">Hành động</th>
+                <th style="width: 10%;">Hành động</th>
             </tr>
         </thead>
         <tbody>

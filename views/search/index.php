@@ -1,19 +1,19 @@
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=search" method="get">
-        <h2>Timf Kieesm</h2>
+        <h2>Tìm kiếm</h2>
         <input type="text" name="controller" value="search" class="form-control" hidden>
 
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Key Word</label>
-            <div class="col-sm-8">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tên</label>
+            <div class="col-sm-6">
                 <input type="text" name="keyword" class="form-control" required="required">
             </div>
         </div>
         
         <div class="form-group row">
-            <label for="inputEmail3" class="col-1 col-form-label">Tìm Kiếm</label>
-            <div class="col-sm-5">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tìm Kiếm</label>
+            <div class="col-sm-6">
                 <select class="form-control" name="type" id="">
                     <option value="Document">Tài Liệu</option>
                     <option value="CreateCard">Đọc Giả</option>
@@ -24,16 +24,14 @@
 
         <div class="form-group row mx-auto">
             <div class="col-sm-2"></div>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Tìm Kiếm</button>
             </div>
             </div>
         </div>
     </form>
-</div>
-
-<?php
+    <?php
 if (isset($data) && is_array($data)) {
 ?>
 
@@ -69,3 +67,5 @@ if (isset($data) && is_array($data)) {
 </div>
 
 <?php } ?>
+</div>
+

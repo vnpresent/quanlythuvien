@@ -62,7 +62,7 @@
                 </select>
             </div>
 
-            <label for="inputEmail3" class="col-1 col-form-label">NamXB</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Năm xuất bản</label>
             <div class="col-sm-2">
                 <input type="text" name="NamXB"  class="form-control" required="required">
             </div>
@@ -80,12 +80,12 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">SoTrang</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Số trang</label>
             <div class="col-sm-2">
                 <input type="text" name="SoTrang"  class="form-control" required="required">
             </div>
 
-            <label for="inputEmail3" class="col-1 col-form-label">KhoGiay</label>
+            <label for="inputEmail3" class="col-1 col-form-label">Khổ giấy</label>
             <div class="col-sm-2">
                 <input type="text" name="KhoGiay"  class="form-control" required="required">
             </div>
@@ -114,7 +114,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">TongSo</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tổng số</label>
             <div class="col-sm-3">
                 <input type="text" name="TongSo"  class="form-control" required="required">
             </div>
@@ -135,7 +135,7 @@
             
         </div>
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label" >NoiDung</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label" >Nội dung</label>
             <div class="col-sm-8">
                 <textarea  type="text" name="NoiDung"  class="form-control" required="required" style="height: 100px"></textarea>
             </div>

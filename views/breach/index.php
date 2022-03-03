@@ -1,5 +1,5 @@
 <div class="container-fluid" style="padding-top:20px">
-    <h2>Thể loại</h2>
+    <h2>Vi phạm</h2>
     <table class="table table-striped bg-white rounded shadow-sm  table-hover">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a name="" id="" class="btn btn-info" href="index.php?controller=breach&action=add" role="button" style="margin-bottom:10px">Thêm</a>
@@ -7,13 +7,13 @@
         <thead class="bg-info text-white">
             <tr class="border-dark">
                 <th>IDPhat</th>
-                <th>SoThe</th>
-                <th>LyDoVP</th>
-                <th>HTXuLy</th>
-                <th>NgayXL</th>
-                <th>NguoiXL</th>
-                <th>NgayMoThe</th>
-                <th style="width: 23%;">Hành động</th>
+                <th>Số thẻ</th>
+                <th>Lý do vi phạm</th>
+                <th>Xử lý</th>
+                <th>Ngày xử lý</th>
+                <th>Người xử lý</th>
+                <th>Ngày mở thẻ</th>
+                <th style="width: 10%;">Hành động</th>
             </tr>
         </thead>
         <tbody>
