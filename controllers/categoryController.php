@@ -68,7 +68,7 @@ class categoryController
                 $result = 'true';
             else
                 $result = 'false';
-            header('location:index.php?controller=category&action=edit&'.$result.'=true&MaTheLoai='.$_POST['MaTheLoai']);
+            header('location:index.php?controller=category&action=edit&result='.$result.'&MaTheLoai='.$_POST['MaTheLoai']);
         }
     }
 
