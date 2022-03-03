@@ -1,5 +1,5 @@
 <div class="container-fluid" style="padding-top:20px">
-    <h2>Danh sách tạo thẻ</h2>
+    <h2>Danh sách đăng ký tạo thẻ</h2>
     <table class="table table-striped bg-white rounded shadow-sm  table-hover">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a name="" id="" class="btn btn-info" href="index.php?controller=createcard&action=add" role="button" style="margin-bottom:10px">Thêm</a>

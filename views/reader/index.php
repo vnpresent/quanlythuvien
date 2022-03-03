@@ -7,7 +7,7 @@
         <thead class="bg-info text-white">
             <tr class="border-dark">
                 <th>Số thẻ</th>
-                <th>MaDK</th>
+                <th>Tên</th>
                 <th>AnhBarcode</th>
                 <th>Ngày cấp</th>
                 <th>Hạn sử dụng</th>

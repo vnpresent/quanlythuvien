@@ -7,8 +7,8 @@
         <thead class="bg-info text-white">
             <tr class="border-dark">
                 <th>IDNhap</th>
-                <th>Mã tài liệu</th>
-                <th>Mã nhà cung cấp</th>
+                <th>Tài liệu</th>
+                <th>nhà cung cấp</th>
                 <th>Người nhập</th>
                 <th>Ngày nhập</th>
                 <th>Số lượng</th>
