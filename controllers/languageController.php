@@ -80,11 +80,11 @@ class languageController
             $language = new Language();
             $language->MaNgonNgu = $_GET['MaNgonNgu'];
             $language->delete();
-            // header('location:index.php?controller=language');
+            header('location:index.php?controller=language');
         }
         else
         {
-            // header('location:index.php');
+            header('location:index.php');
         }
     }
 }

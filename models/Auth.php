@@ -14,9 +14,9 @@ class Auth
         if(self::isLogin())
         {
             if (self::$ChucDanh == 'admin')
-            return true;
-        else
-            return false;
+                return true;
+            else
+                return false;
         }
         else
         {
@@ -29,9 +29,9 @@ class Auth
         if(self::isLogin())
         {
             if (self::$ChucDanh == 'kythuat')
-            return true;
-        else
-            return false;
+                return true;
+            else
+                return false;
         }
         else
         {
@@ -44,9 +44,9 @@ class Auth
         if(self::isLogin())
         {
             if (self::$ChucDanh == 'kehoach')
-            return true;
-        else
-            return false;
+                return true;
+            else
+                return false;
         }
         else
         {
@@ -59,9 +59,9 @@ class Auth
         if(self::isLogin())
         {
             if (self::$ChucDanh == 'thuthu')
-            return true;
-        else
-            return false;
+                return true;
+            else
+                return false;
         }
         else
         {
