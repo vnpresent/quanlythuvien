@@ -2,7 +2,7 @@
 <h2>Thêm độc giả</h2>
     <form action="index.php?controller=reader&action=insert" method="post">
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">MaDK</label>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Tên độc giả</label>
             <div class="col-sm-6">
                 <select name="MaDK" class="form-control" aria-label="Default select example">
                     <?php

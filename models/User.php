@@ -32,7 +32,7 @@ class User
     public function save()
     {
         $token = rand_string(18);
-        $query = "INSERT INTO `nguoidung` (`id`, `username`, `password`, `HoTen`, `NamSinh`, `GioiTinh`, `ChucDanh`, `Email`, `DienThoai`, `token`, `status`) VALUES (NULL, '$this->Username', '$this->Password', '$this->HoTen', '$this->NamSinh', '$this->GioiTinh', 'docgia', '$this->Email', '$this->DienThoai', '$token', '1');";
+        $query = "INSERT INTO `nguoidung` (`id`, `username`, `password`, `HoTen`, `NamSinh`, `GioiTinh`, `ChucDanh`, `Email`, `DienThoai`, `token`, `status`) VALUES (NULL, '$this->Username', '$this->Password', '$this->HoTen', '$this->NamSinh', '$this->GioiTinh', '', '$this->Email', '$this->DienThoai', '$token', '1');";
         return query($query);
     }
 

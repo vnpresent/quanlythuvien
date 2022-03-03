@@ -17,9 +17,9 @@
                 <select name="ChucDanh" class="form-control" aria-label="Default select example">
                     <option value='<?php echo $data['ChucDanh']; ?>' selected><?php echo $data['ChucDanh']; ?></option>
                     <option value='admin' >admin</option>
-                    <option value='Kỹ thuật' >Kỹ thuật</option>
-                    <option value='Kế hoạch' >Kế hoạch</option>
-                    <option value='Thủ thư' >Thủ thư</option>
+                    <option value='Kythuat' >Kỹ thuật</option>
+                    <option value='kehoach' >Kế hoạch</option>
+                    <option value='thuthu' >Thủ thư</option>
                 </select>
             </div>
         </div>

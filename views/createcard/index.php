@@ -12,7 +12,7 @@
                 <th>Giới tính</th>
                 <th>Chức danh</th>
                 <!-- <th>MaDV</th> -->
-                <th>Mã lớp</th>
+                <th>Lớp</th>
                 <!-- <th>KhoaHoc</th> -->
                 <th>Điện thoại</th>
                 <!-- <th>Email</th> -->

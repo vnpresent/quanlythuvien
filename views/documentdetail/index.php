@@ -30,4 +30,12 @@
             }
             ?>
     </table>
+    <div class="form-group row mx-auto">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-12">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=document" role="button">Thoát</a>
+            </div>
+            </div>
+        </div>
 </div>

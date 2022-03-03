@@ -2,7 +2,8 @@
     <h2>Tài liệu</h2>
     <table class="table table-striped bg-white rounded shadow-sm  table-hover">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a name="" id="" class="btn btn-info" href="index.php?controller=document&action=add" role="button" style="margin-bottom:10px">Thêm tài liệu</a>
+            <a name="" id="" class="btn btn-info" href="index.php?controller=document&action=add" role="button" style="margin-bottom:10px;margin-right:10px;">Thêm tài liệu</a>
+            <a name="" id="" class="btn btn-info" href="index.php?controller=documentdetail" role="button" style="margin-bottom:10px">Thông tin</a>
         </div>
         <thead class="bg-info text-white">
             <tr class="border-dark">
@@ -54,10 +55,10 @@
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=document&action=edit&MaTL=' . $document['MaTL'] . '"><i class="fas fa-edit"></i></a>';
                         echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa tài khoản này không?\')" href="index.php?controller=document&action=delete&MaTL=' . $document['MaTL'] . '"><i class="fas fa-trash"></i></a>';
-                        echo '<a class="ml-3" onclick="return " href="index.php?controller=documentdetail&action=index&MaTL=' . $document['MaTL'] . '"><i class="fas fa-eye"></i></a>';
+                        // echo '<a class="ml-3" onclick="return " href="index.php?controller=documentdetail&action=index&MaTL=' . $document['MaTL'] . '"><i class="fas fa-eye"></i></a>';
                         echo "</tr>";
                     }
-                    
+
                 }
             }
             ?>

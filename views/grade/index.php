@@ -8,7 +8,7 @@
             <tr class="border-dark">
                 <th>MaLop</th>
                 <th>Tên lớp</th>
-                <th>MaDV</th>
+                <th>Đơn vị</th>
                 <th style="width: 10%;">Hành động</th>
             </tr>
         </thead>

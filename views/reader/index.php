@@ -34,7 +34,7 @@
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=reader&action=edit&SoThe=' . $reader['SoThe'] . '"><i class="fas fa-edit"></i></a>';
                         echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa ?\')" href="index.php?controller=reader&action=delete&SoThe=' . $reader['SoThe'] . '"><i class="fas fa-trash"></i></a>';
-                        echo '<a class="ml-3" onclick="return " href="#"><i class="fas fa-eye"></i></a>';
+                        // echo '<a class="ml-3" onclick="return " href="#"><i class="fas fa-eye"></i></a>';
                         echo "</tr>";
                     }
                 }
