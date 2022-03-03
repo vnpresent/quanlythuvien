@@ -10,7 +10,7 @@ class Unit
 
     public static function index()
     {
-        $query = "select * from donvi";
+        $query = "select * from donvi  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

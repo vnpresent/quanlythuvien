@@ -10,7 +10,7 @@ class Author
 
     public static function index()
     {
-        $query = "select * from tacgia";
+        $query = "select * from tacgia where status = '1'";
         $data = getalldata($query);
         return $data;
     }

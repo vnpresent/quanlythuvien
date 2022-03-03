@@ -14,7 +14,7 @@ class Enter
 
     public static function index()
     {
-        $query = "select * from phieunhap";
+        $query = "select * from phieunhap  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

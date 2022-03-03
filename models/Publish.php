@@ -10,7 +10,7 @@ class Publish
 
     public static function index()
     {
-        $query = "select * from nhaxuatban";
+        $query = "select * from nhaxuatban  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

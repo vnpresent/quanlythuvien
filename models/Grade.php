@@ -10,7 +10,7 @@ class Grade
 
     public static function index()
     {
-        $query = "select * from lop";
+        $query = "select * from lop  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

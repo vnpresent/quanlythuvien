@@ -16,7 +16,7 @@ class Reader
 
     public static function index()
     {
-        $query = "select * from docgia";
+        $query = "select * from docgia  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

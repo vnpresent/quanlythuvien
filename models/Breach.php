@@ -14,7 +14,7 @@ class Breach
 
     public static function index()
     {
-        $query = "select * from xulyvp";
+        $query = "select * from xulyvp  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

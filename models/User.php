@@ -17,7 +17,7 @@ class User
 
     public static function index()
     {
-        $query = "select * from nguoidung";
+        $query = "select * from nguoidung  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

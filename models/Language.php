@@ -10,7 +10,7 @@ class Language
 
     public static function index()
     {
-        $query = "select * from ngonngu";
+        $query = "select * from ngonngu  where status = '1'";
         $data = getalldata($query);
         return $data;
     }

@@ -25,7 +25,7 @@ class Document
 
     public static function index()
     {
-        $query = "select * from tailieu";
+        $query = "select * from tailieu  where status = '1'";
         $data = getalldata($query);
         return $data;
     }
@@ -34,6 +34,13 @@ class Document
     {
         $query = "select * from tailieu where MaTL = $MaTL";
         $data = getonedata($query);
+        return $data;
+    }
+
+    public static function search($keyword)
+    {
+        $query = "select MaTL,TenTL,MaTheLoai,MaVT from tailieu where TenTL like '%$keyword%'";
+        $data = getalldata($query);
         return $data;
     }
 
