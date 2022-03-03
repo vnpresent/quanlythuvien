@@ -11,7 +11,7 @@ $controller = isset($_GET['controller']) ? $_GET['controller'] : 'auth';
 
 //Lấy action
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-if($action != 'login' && $action != 'logout')
+if($action != 'login' && $action != 'logout'&& $action != 'delete')
     include_once('./assets/layouts/siderbar.php');
 //Kiểm tra có phải ở trang đăng nhập hoặc đã login chưa
 // if (!Auth::isLogin() && $action!='login')

@@ -2,7 +2,6 @@
 include_once('./config.php');
 include_once('User.php');
 
-
 class Auth
 {
     public static $Username = null;
@@ -12,34 +11,62 @@ class Auth
 
     public static function isAdmin()
     {
-        if (self::$ChucDanh == 'admin')
+        if(self::isLogin())
+        {
+            if (self::$ChucDanh == 'admin')
             return true;
         else
             return false;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public static function isKyThuat()
     {
-        if (self::$ChucDanh == 'kythuat')
+        if(self::isLogin())
+        {
+            if (self::$ChucDanh == 'kythuat')
             return true;
         else
             return false;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public static function isKeHoach()
     {
-        if (self::$ChucDanh == 'kehoach')
+        if(self::isLogin())
+        {
+            if (self::$ChucDanh == 'kehoach')
             return true;
         else
             return false;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public static function isThuThu()
     {
-        if (self::$ChucDanh == 'thuthu')
+        if(self::isLogin())
+        {
+            if (self::$ChucDanh == 'thuthu')
             return true;
         else
             return false;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public static function isLogin()
