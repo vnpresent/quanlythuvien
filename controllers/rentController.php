@@ -91,6 +91,7 @@ class rentController
     {
         if(Auth::isadmin() && isset($_POST['MaCaBiet']) && isset($_POST['SoThe']))
         {
+            print($_POST['MaCaBiet'].':'.$_POST['SoThe']);
             $data = array();
             $arr = explode("\r\n", trim($_POST['MaCaBiet']));
             foreach($arr as $ma)
@@ -103,18 +104,17 @@ class rentController
 
     public function return()
     {
-        if(Auth::isadmin() && isset($_POST['SoThe']))
+        if(isset($_GET['SoThe']) && isset($_GET['MaCaBiet']) && Auth::isadmin())
         {
-            $arr =$_POST['MaCaBiet'];
-            $sothe = $_POST['SoThe'];
-            foreach($arr as $ma)
-            {
-                $rent = new Rent();
-                $rent->MaCaBiet = $ma;
-                $rent->SoThe = $sothe;
-                $rent->return();
-            }
+            $rent = new Rent();
+            $rent->MaCaBiet = $_GET['MaCaBiet'];
+            $rent->SoThe = $_GET['SoThe'];
+            $rent->return();
             header('location:index.php?controller=rent');
+        }
+        else
+        {
+            header('location:index.php');
         }
     }
 
