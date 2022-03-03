@@ -24,7 +24,7 @@ class CreateCard
 
     public static function index()
     {
-        $query = "select * from dsdktaothe where XuLy = 'no'";
+        $query = "select * from dsdktaothe where XuLy = 'no' and status = '1'";
         $data = getalldata($query);
         return $data;
     }

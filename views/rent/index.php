@@ -44,7 +44,7 @@
         <tbody>
             <?php
             if (isset($data) && is_array($data)) {
-                foreach ($data as $rent) {
+                foreach ($data as $rent) { 
                     echo "<tr>";
                     echo "<td class=\"border-dark\" scope=\"row\">" . $rent['ID_MuonTra'] . "</td>";
                     echo "<td class=\"border-dark\">" . $rent['SoThe'] . "</td>";
