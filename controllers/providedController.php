@@ -74,10 +74,10 @@ class providedController
 
     public function delete()
     {
-        if(isset($_GET['MaTL']) && Auth::isadmin())
+        if(isset($_GET['MaNCC']) && Auth::isadmin())
         {
             $provided = new Provided();
-            $provided->MaTL = $_GET['MaNCC'];
+            $provided->MaNCC = $_GET['MaNCC'];
             $provided->delete();
             header('location:index.php?controller=provided');
         }

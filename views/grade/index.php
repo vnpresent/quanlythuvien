@@ -20,7 +20,7 @@
                         echo "<tr>";
                         echo "<td class=\"border-dark\" scope=\"row\">" . $grade['MaLop'] . "</td>";
                         echo "<td class=\"border-dark\" scope=\"row\">" . $grade['TenLop'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $grade['MaDV'] . "</td>";
+                        echo "<td class=\"border-dark\">" . Unit::show($grade['MaDV'])["TenDV"] . "</td>";
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=grade&action=edit&MaLop=' . $grade['MaLop'] . '"><i class="fas fa-edit"></i></a>';
                         echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa ?\')" href="index.php?controller=grade&action=delete&MaLop=' . $grade['MaLop'] . '"><i class="fas fa-trash"></i></a>';

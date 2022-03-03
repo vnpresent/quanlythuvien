@@ -36,7 +36,7 @@
                         echo "<td class=\"border-dark\">" . $createcard['GioiTinh'] . "</td>";
                         echo "<td class=\"border-dark\">" . $createcard['ChucDanh'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $createcard['MaDV'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $createcard['MaLop'] . "</td>";
+                        echo "<td class=\"border-dark\">" . Grade::show($createcard['MaLop'])["TenLop"] . "</td>";
                         // echo "<td class=\"border-dark\">" . $createcard['KhoaHoc'] . "</td>";
                         echo "<td class=\"border-dark\">" . $createcard['DienThoai'] . "</td>";
                         // echo "<td class=\"border-dark\">" . $createcard['Email'] . "</td>";

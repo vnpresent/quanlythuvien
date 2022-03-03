@@ -2,6 +2,12 @@
 include_once('./models/Auth.php');
 include_once('./models/Reader.php');
 include_once('./models/CreateCard.php');
+
+if( !(Auth::isAdmin() || Auth::isKyThuat()))
+{
+    header('location:index.php');
+}
+
 class readerController
 {
 
