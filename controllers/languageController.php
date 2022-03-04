@@ -6,7 +6,7 @@ class languageController
 
     public function index()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             $data=Language::index();
             include_once('./views/language/index.php');
@@ -15,7 +15,7 @@ class languageController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             include_once('./views/language/add.php');
         }
@@ -23,7 +23,7 @@ class languageController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $language = new Language();
 
@@ -44,7 +44,7 @@ class languageController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaNgonNgu']))
+        if((Auth::isadmin() || Auth::isKyThuat()) && isset($_GET['MaNgonNgu']))
         {
             $data = Language::show($_GET['MaNgonNgu']);
             include_once('./views/language/edit.php');
@@ -53,7 +53,7 @@ class languageController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $language = new Language();
 
@@ -74,7 +74,7 @@ class languageController
 
     public function delete()
     {
-        if(isset($_GET['MaNgonNgu']) && Auth::isadmin())
+        if(isset($_GET['MaNgonNgu']) && (Auth::isadmin() || Auth::isKyThuat()))
         {
             echo $_GET['MaNgonNgu'];
             $language = new Language();

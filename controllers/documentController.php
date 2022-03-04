@@ -8,17 +8,13 @@ include_once('./models/Author.php');
 include_once('./models/Position.php');
 include_once('./models/Unit.php');
 
-if( !(Auth::isAdmin() || Auth::isKyThuat()))
-{
-    header('location:index.php');
-}
 
 class documentController
 {
 
     public function index()
     {
-        if(Auth::isadmin())
+        if(Auth::isadmin() || Auth::isKyThuat())
         {
             $data=Document::index();
             include_once('./views/document/index.php');
@@ -27,7 +23,7 @@ class documentController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if(Auth::isadmin() || Auth::isKyThuat())
         {
             $categorys = Category::index();
             $publishs = Publish::index();
@@ -41,7 +37,7 @@ class documentController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $document = new Document();
 
@@ -62,7 +58,7 @@ class documentController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaTL']))
+        if((Auth::isadmin()  || Auth::isKyThuat()) && isset($_GET['MaTL']))
         {
             $data = Document::show($_GET['MaTL']);
             $categorys = Category::index();
@@ -78,7 +74,7 @@ class documentController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $document = new Document();
 
@@ -99,7 +95,7 @@ class documentController
 
     public function delete()
     {
-        if(isset($_GET['MaTL']) && Auth::isadmin())
+        if((isset($_GET['MaTL'])  || Auth::isKyThuat()) && Auth::isadmin())
         {
             $document = new Document();
             $document->MaTL = $_GET['MaTL'];

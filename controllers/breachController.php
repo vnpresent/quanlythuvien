@@ -6,7 +6,7 @@ class breachController
 
     public function index()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isThuThu()))
         {
             $data=breach::index();
             include_once('./views/breach/index.php');
@@ -15,7 +15,7 @@ class breachController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isThuThu()))
         {
             include_once('./views/breach/add.php');
         }
@@ -23,7 +23,7 @@ class breachController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isThuThu()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $breach = new breach();
 
@@ -44,7 +44,7 @@ class breachController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['IDPhat']))
+        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['IDPhat']))
         {
             $data = breach::show($_GET['IDPhat']);
             include_once('./views/breach/edit.php');
@@ -53,7 +53,7 @@ class breachController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isThuThu()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $breach = new breach();
 
@@ -74,7 +74,7 @@ class breachController
 
     public function delete()
     {
-        if(isset($_GET['IDPhat']) && Auth::isadmin())
+        if(isset($_GET['IDPhat']) && (Auth::isadmin() || Auth::isThuThu()))
         {
             $breach = new breach();
             $breach->IDPhat = $_GET['IDPhat'];

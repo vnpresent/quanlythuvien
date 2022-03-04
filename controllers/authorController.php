@@ -6,7 +6,7 @@ class authorController
 
     public function index()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             $data=Author::index();
             include_once('./views/author/index.php');
@@ -15,7 +15,7 @@ class authorController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             include_once('./views/author/add.php');
         }
@@ -23,7 +23,7 @@ class authorController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $author = new Author();
 
@@ -44,7 +44,7 @@ class authorController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaTG']))
+        if((Auth::isadmin() || Auth::isKyThuat()) && isset($_GET['MaTG']))
         {
             $data = Author::show($_GET['MaTG']);
             include_once('./views/author/edit.php');
@@ -53,7 +53,7 @@ class authorController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $author = new Author();
 
@@ -74,7 +74,7 @@ class authorController
 
     public function delete()
     {
-        if(isset($_GET['MaTG']) && Auth::isadmin())
+        if(isset($_GET['MaTG']) && (Auth::isadmin() || Auth::isKyThuat()))
         {
             $author = new Author();
             $author->MaTG = $_GET['MaTG'];
