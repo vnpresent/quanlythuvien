@@ -55,7 +55,7 @@
                         echo '<td class="border-dark">';
                         echo '<a href="index.php?controller=document&action=edit&MaTL=' . $document['MaTL'] . '"><i class="fas fa-edit"></i></a>';
                         echo '<a class="ml-3" onclick="return confirm(\'Bạn có muốn xóa tài khoản này không?\')" href="index.php?controller=document&action=delete&MaTL=' . $document['MaTL'] . '"><i class="fas fa-trash"></i></a>';
-                        // echo '<a class="ml-3" onclick="return " href="index.php?controller=documentdetail&action=index&MaTL=' . $document['MaTL'] . '"><i class="fas fa-eye"></i></a>';
+                        echo '<a class="ml-3" onclick="return " href="index.php?controller=document&action=view&MaTL=' . $document['MaTL'] . '"><i class="fas fa-eye"></i></a>';
                         echo "</tr>";
                     }
 

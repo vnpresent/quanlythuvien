@@ -7,7 +7,7 @@ class categoryController
 
     public function permission()
     {
-        if( Auth::isadmin() )
+        if( (Auth::isadmin() || Auth::isKyThuat()) )
             return true;
         else
             return false;
@@ -15,7 +15,7 @@ class categoryController
 
     public function index()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             $data=Category::index();
             include_once('./views/category/index.php');
@@ -24,7 +24,7 @@ class categoryController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             include_once('./views/category/add.php');
         }
@@ -32,7 +32,7 @@ class categoryController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $category = new Category();
 
@@ -53,7 +53,7 @@ class categoryController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaTheLoai']))
+        if((Auth::isadmin() || Auth::isKyThuat()) && isset($_GET['MaTheLoai']))
         {
             $data = Category::show($_GET['MaTheLoai']);
             include_once('./views/category/edit.php');
@@ -62,7 +62,7 @@ class categoryController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $category = new Category();
 
@@ -83,7 +83,7 @@ class categoryController
 
     public function delete()
     {
-        if(isset($_GET['MaTheLoai']) && Auth::isadmin())
+        if(isset($_GET['MaTheLoai']) && (Auth::isadmin() || Auth::isKyThuat()))
         {
             $category = new Category();
             $category->MaTheLoai = $_GET['MaTheLoai'];

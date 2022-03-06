@@ -6,7 +6,7 @@ class rentController
 
     public function index()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isThuThu()))
         {
             $data=Rent::index();
             include_once('./views/rent/index.php');
@@ -15,7 +15,7 @@ class rentController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isThuThu()))
         {
             include_once('./views/rent/add.php');
         }
@@ -23,7 +23,7 @@ class rentController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isThuThu()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $rent = new Rent();
 
@@ -51,7 +51,7 @@ class rentController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['ID_MuonTra']))
+        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['ID_MuonTra']))
         {
             $data = Rent::show($_GET['ID_MuonTra']);
             include_once('./views/rent/edit.php');
@@ -60,7 +60,7 @@ class rentController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isThuThu()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $rent = new Rent();
 
@@ -120,7 +120,7 @@ class rentController
 
     public function delete()
     {
-        if(isset($_GET['ID_MuonTra']) && Auth::isadmin())
+        if(isset($_GET['ID_MuonTra']) && (Auth::isadmin() || Auth::isThuThu()))
         {
             $rent = new Rent();
             $rent->ID_MuonTra = $_GET['ID_MuonTra'];

@@ -8,7 +8,7 @@ class createcardController
 
     public function index()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             $data=CreateCard::index();
             include_once('./views/createcard/index.php');
@@ -17,7 +17,7 @@ class createcardController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             $units = Unit::index();
             $grades = Grade::index();
@@ -27,7 +27,7 @@ class createcardController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $createcard = new CreateCard();
 
@@ -48,7 +48,7 @@ class createcardController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaDK']))
+        if((Auth::isadmin() || Auth::isKyThuat()) && isset($_GET['MaDK']))
         {
             $data = CreateCard::show($_GET['MaDK']);
             $units = Unit::index();
@@ -59,7 +59,7 @@ class createcardController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $createcard = new CreateCard();
 
@@ -80,7 +80,7 @@ class createcardController
 
     public function delete()
     {
-        if(isset($_GET['MaDK']) && Auth::isadmin())
+        if(isset($_GET['MaDK']) && (Auth::isadmin() || Auth::isKyThuat()))
         {
             $createcard = new CreateCard();
             $createcard->MaDK = $_GET['MaDK'];

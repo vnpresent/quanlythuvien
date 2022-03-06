@@ -15,7 +15,7 @@ class providedController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if(Auth::isadmin() || Auth::isKyThuat())
         {
             include_once('./views/provided/add.php');
         }
@@ -23,7 +23,7 @@ class providedController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $provided = new Provided();
 
@@ -44,7 +44,7 @@ class providedController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaNCC']))
+        if((Auth::isadmin() || Auth::isKyThuat()) && isset($_GET['MaNCC']))
         {
             $data = Provided::show($_GET['MaNCC']);
             include_once('./views/provided/edit.php');
@@ -53,7 +53,7 @@ class providedController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $provided = new Provided();
 
@@ -74,7 +74,7 @@ class providedController
 
     public function delete()
     {
-        if(isset($_GET['MaNCC']) && Auth::isadmin())
+        if(isset($_GET['MaNCC']) && (Auth::isadmin() || Auth::isKyThuat()))
         {
             $provided = new Provided();
             $provided->MaNCC = $_GET['MaNCC'];

@@ -130,6 +130,45 @@ class userController
         }
     }
 
+    public function editpass()
+    {
+        if(isset($_GET['id']) && Auth::isadmin())
+        {
+            $data = User::show($_GET['id']);
+            include_once('./views/user/editpass.php');
+        }
+        else
+        {
+            header('location:index.php');
+        }
+    }
+
+    public function pass()
+    {
+        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+            $user = new User();
+            $pass = $_POST['password1'];
+            $pass2 = $_POST['password2'];
+
+            print($pass.":::".$pass2);
+            if($pass!=$pass2)
+            {
+                header('location:index.php?controller=user&action=editpass&result=false&id='.$_POST['id']);
+            }         
+            else
+            {
+                $user->id = $_POST['id'];
+                $user->changepass($pass);
+                header('location:index.php?controller=user&action=editpass&result=true&id='.$_POST['id']);
+            }     
+        }
+        else
+        {
+            // header('location:index.php');
+        }
+    }
+
     // action xóa
     public function delete()
     {

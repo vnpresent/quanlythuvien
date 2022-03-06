@@ -6,7 +6,7 @@ class unitController
 
     public function index()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             $data=Unit::index();
             include_once('./views/unit/index.php');
@@ -15,7 +15,7 @@ class unitController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isKyThuat()))
         {
             include_once('./views/unit/add.php');
         }
@@ -23,7 +23,7 @@ class unitController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $unit = new Unit();
 
@@ -44,7 +44,7 @@ class unitController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaDV']))
+        if((Auth::isadmin() || Auth::isKyThuat()) && isset($_GET['MaDV']))
         {
             $data = Unit::show($_GET['MaDV']);
             include_once('./views/Unit/edit.php');
@@ -53,7 +53,7 @@ class unitController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $unit = new Unit();
 
@@ -74,7 +74,7 @@ class unitController
 
     public function delete()
     {
-        if(isset($_GET['MaDV']) && Auth::isadmin())
+        if(isset($_GET['MaDV']) && (Auth::isadmin() || Auth::isKyThuat()))
         {
             $unit = new Unit();
             $unit->MaDV = $_GET['MaDV'];

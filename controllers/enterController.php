@@ -8,7 +8,7 @@ class enterController
 
     public function index()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isThuThu()))
         {
             $data=Enter::index();
             include_once('./views/enter/index.php');
@@ -17,7 +17,7 @@ class enterController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if((Auth::isadmin() || Auth::isThuThu()))
         {
             $documents = Document::index();
             $provideds = Provided::index();
@@ -27,7 +27,7 @@ class enterController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isThuThu()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $enter = new Enter();
 
@@ -48,7 +48,7 @@ class enterController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['IDNhap']))
+        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['IDNhap']))
         {
             $data = Enter::show($_GET['IDNhap']);
             $documents = Document::index();
@@ -59,7 +59,7 @@ class enterController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isThuThu()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $enter = new Enter();
 
@@ -80,7 +80,7 @@ class enterController
 
     public function delete()
     {
-        if(isset($_GET['IDNhap']) && Auth::isadmin())
+        if(isset($_GET['IDNhap']) && (Auth::isadmin() || Auth::isThuThu()))
         {
             $enter = new Enter();
             $enter->IDNhap = $_GET['IDNhap'];

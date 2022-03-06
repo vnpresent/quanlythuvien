@@ -7,18 +7,15 @@ include_once('./models/Language.php');
 include_once('./models/Author.php');
 include_once('./models/Position.php');
 include_once('./models/Unit.php');
+include_once('./models/DocumentDetail.php');
 
-if( !(Auth::isAdmin() || Auth::isKyThuat()))
-{
-    header('location:index.php');
-}
 
 class documentController
 {
 
     public function index()
     {
-        if(Auth::isadmin())
+        if(Auth::isadmin() || Auth::isKyThuat())
         {
             $data=Document::index();
             include_once('./views/document/index.php');
@@ -27,7 +24,7 @@ class documentController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if(Auth::isadmin() || Auth::isKyThuat())
         {
             $categorys = Category::index();
             $publishs = Publish::index();
@@ -41,7 +38,7 @@ class documentController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $document = new Document();
 
@@ -62,7 +59,7 @@ class documentController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaTL']))
+        if((Auth::isadmin()  || Auth::isKyThuat()) && isset($_GET['MaTL']))
         {
             $data = Document::show($_GET['MaTL']);
             $categorys = Category::index();
@@ -78,7 +75,7 @@ class documentController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $document = new Document();
 
@@ -97,9 +94,25 @@ class documentController
         }
     }
 
+    public function view()
+    {
+        if((Auth::isadmin()  || Auth::isKyThuat()) && isset($_GET['MaTL']))
+        {
+            $data = Document::show($_GET['MaTL']);
+            $categorys = Category::index();
+            $documentdetails=DocumentDetail::find($_GET['MaTL']);
+            $publishs = Publish::index();
+            $languages = Language::index();
+            $authors = Author::index();
+            $positions = Position::index();
+            $units = Unit::index();
+            include_once('./views/document/view.php');
+        }
+    }
+
     public function delete()
     {
-        if(isset($_GET['MaTL']) && Auth::isadmin())
+        if((isset($_GET['MaTL'])  || Auth::isKyThuat()) && Auth::isadmin())
         {
             $document = new Document();
             $document->MaTL = $_GET['MaTL'];

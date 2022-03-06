@@ -6,7 +6,7 @@ class publishController
 
     public function index()
     {
-        if(Auth::isadmin())
+        if(Auth::isadmin() || Auth::isKyThuat())
         {
             $data=Publish::index();
             include_once('./views/publish/index.php');
@@ -15,7 +15,7 @@ class publishController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if(Auth::isadmin() || Auth::isKyThuat())
         {
             include_once('./views/publish/add.php');
         }
@@ -23,7 +23,7 @@ class publishController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $publish = new Publish();
 
@@ -44,7 +44,7 @@ class publishController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['MaNXB']))
+        if((Auth::isadmin() || Auth::isKyThuat()) && isset($_GET['MaNXB']))
         {
             $data = Publish::show($_GET['MaNXB']);
             include_once('./views/publish/edit.php');
@@ -53,7 +53,7 @@ class publishController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $publish = new Publish();
 
@@ -74,7 +74,7 @@ class publishController
 
     public function delete()
     {
-        if(isset($_GET['MaNXB']) && Auth::isadmin())
+        if(isset($_GET['MaNXB']) && (Auth::isadmin() || Auth::isKyThuat()))
         {
             $publish = new Publish();
             $publish->MaNXB = $_GET['MaNXB'];

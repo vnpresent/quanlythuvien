@@ -3,17 +3,12 @@ include_once('./models/Auth.php');
 include_once('./models/Reader.php');
 include_once('./models/CreateCard.php');
 
-if( !(Auth::isAdmin() || Auth::isKyThuat()))
-{
-    header('location:index.php');
-}
-
 class readerController
 {
 
     public function index()
     {
-        if(Auth::isadmin())
+        if(Auth::isadmin() || Auth::isKyThuat())
         {
             $data=Reader::index();
             include_once('./views/reader/index.php');
@@ -22,7 +17,7 @@ class readerController
 
     public function add()
     {
-        if(Auth::isadmin())
+        if(Auth::isadmin() || Auth::isKyThuat())
         {
             $createcards = CreateCard::index();
             include_once('./views/reader/add.php');
@@ -31,7 +26,7 @@ class readerController
 
     public function insert()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $Reader = new Reader();
 
@@ -52,7 +47,7 @@ class readerController
 
     public function edit()
     {
-        if(Auth::isadmin() && isset($_GET['SoThe']))
+        if((Auth::isadmin() || Auth::isKyThuat()) && isset($_GET['SoThe']))
         {
             $data = Reader::show($_GET['SoThe']);
             include_once('./views/reader/edit.php');
@@ -61,7 +56,7 @@ class readerController
 
     public function update()
     {
-        if(Auth::isadmin() && $_SERVER['REQUEST_METHOD'] == 'POST')
+        if((Auth::isadmin() || Auth::isKyThuat()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
             $reader = new Reader();
 
@@ -82,7 +77,7 @@ class readerController
 
     public function delete()
     {
-        if(isset($_GET['SoThe']) && Auth::isadmin())
+        if(isset($_GET['SoThe']) && (Auth::isadmin() || Auth::isKyThuat()))
         {
             $reader = new Reader();
             $reader->SoThe = $_GET['SoThe'];

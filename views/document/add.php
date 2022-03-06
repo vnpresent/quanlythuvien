@@ -37,8 +37,8 @@
             <label for="inputEmail3" class="col-1 col-form-label">Tác giả</label>
             <div class="col-sm-2">
                 
-                <div class="row">
-                    <div class="col-sm-6 col-md-10">
+                
+                    
                         <select name="MaTG" class="form-control" aria-label="Default select example">
                             <?php
                                 foreach($authors as $author)
@@ -47,19 +47,20 @@
                                 }
                             ?>
                         </select>
-                    </div>
-                    <div class="col-sm-2 col-md-2"><a  href="#"><i class="fas fa-trash"></i></a></div>
-                </div>
+                    
+                    <!-- <div class="col-sm-2 col-md-2"><a  href="#"><i class="fas fa-trash"></i></a></div> -->
+                
                 <div id="liveAlertPlaceholder" style="margin-top:10px;"></div>
                 <button type="button" class="btn btn-primary" id="liveAlertBtn" style="margin-top:10px;">Thêm tác giả</button>
+                <button type="button" id="close" class="btn btn-primary" id="liveAlertBtn" style="margin-top:10px;">Xóa tác giả</button>
                 <script>
                     var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
                     var alertTrigger = document.getElementById('liveAlertBtn')
 
                     function alert(message, type) {
                     var wrapper = document.createElement('div')
-                    wrapper.innerHTML = '<div class="row" style="margin-top:10px;"><div class="col-sm-6 col-md-10"><select name="MaTG" class="form-control" aria-label="Default select example"></select></div><div class="col-sm-2 col-md-2"><a  href="#"><i class="fas fa-trash"></i></a></div></div>'
-                    alertPlaceholder.append(wrapper)
+                    wrapper.innerHTML = '<div id="div1" class="row" style="margin-top:10px;"><select name="MaTG" class="form-control" aria-label="Default select example">'+'<?php foreach($authors as $author) {?>'+'<?php }?>'+'</select></div>'
+                    alertPlaceholder.append(wrapper )
                     }
 
                     if (alertTrigger) {
@@ -67,6 +68,11 @@
                         alert('Nice, you triggered this alert message!', 'success')
                     })
                     }
+                    $(document).ready(function(){
+                    $("#close").click(function(){
+                        $("#div1").remove();
+                    });
+                    });
                 </script>
             
             </div>
