@@ -7,7 +7,7 @@
         <thead class="bg-info text-white">
             <tr class="border-dark">
                 <th>Số thẻ</th>
-                <th>Tên</th>
+                <th>Họ Tên</th>
                 <th>AnhBarcode</th>
                 <th>Ngày cấp</th>
                 <th>Hạn sử dụng</th>
@@ -24,7 +24,7 @@
                     if ($reader['status'] == 1) {
                         echo "<tr>";
                         echo "<td class=\"border-dark\" scope=\"row\">" . $reader['SoThe'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $reader['MaDK'] . "</td>";
+                        echo "<td class=\"border-dark\">" . CreateCard::show($reader['MaDK'])["HoTen"] . "</td>";
                         echo "<td class=\"border-dark\">" . $reader['AnhBarcode'] . "</td>";
                         echo "<td class=\"border-dark\">" . $reader['NgayCap'] . "</td>";
                         echo "<td class=\"border-dark\">" . $reader['HSD'] . "</td>";

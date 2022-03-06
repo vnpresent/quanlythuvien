@@ -1,8 +1,17 @@
 <?php
 include_once('./models/Auth.php');
 include_once('./models/Category.php');
+
 class categoryController
 {
+
+    public function permission()
+    {
+        if( Auth::isadmin() )
+            return true;
+        else
+            return false;
+    }
 
     public function index()
     {

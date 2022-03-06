@@ -46,25 +46,22 @@
             <?php
             if (isset($data) && is_array($data)) {
                 foreach ($data as $rent) {
-                    if($rent['Loai']!="tra")
-                    {
-                        echo "<tr>";
-                        echo "<td class=\"border-dark\" scope=\"row\">" . $rent['ID_MuonTra'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $rent['SoThe'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $rent['MaCaBiet'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $rent['KieuMuon'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $rent['NgayMuon'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $rent['NguoiChoMuon'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $rent['HanTra'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $rent['Loai'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $rent['NgayTra'] . "</td>";
-                        echo "<td class=\"border-dark\">" . $rent['NguoiNhan'] . "</td>";
-                        echo "<td class=\"border-dark\">" .(date("Y-m-d") <= date("Y-m-d",strtotime($rent['HanTra']))?"Đúng Hạn":"Quá Hạn"). "</td>";
-                        echo '<td class="border-dark">';
-                        echo '<a  href="index.php?controller=rent&action=edit&ID_MuonTra=' . $rent['ID_MuonTra'] . '"><i class="fas fa-edit"></i></a>';
-                        echo '<a class="ml-3" href="index.php?controller=rent&action=delete&ID_MuonTra=' . $rent['ID_MuonTra'] . '">Trả</a>';
-                        echo "</tr>"; 
-                    }             
+                    echo "<tr>";
+                    echo "<td class=\"border-dark\" scope=\"row\">" . $rent['ID_MuonTra'] . "</td>";
+                    echo "<td class=\"border-dark\">" . $rent['SoThe'] . "</td>";
+                    echo "<td class=\"border-dark\">" . $rent['MaCaBiet'] . "</td>";
+                    echo "<td class=\"border-dark\">" . $rent['KieuMuon'] . "</td>";
+                    echo "<td class=\"border-dark\">" . $rent['NgayMuon'] . "</td>";
+                    echo "<td class=\"border-dark\">" . $rent['NguoiChoMuon'] . "</td>";
+                    echo "<td class=\"border-dark\">" . $rent['HanTra'] . "</td>";
+                    echo "<td class=\"border-dark\">" . $rent['Loai'] . "</td>";
+                    echo "<td class=\"border-dark\">" . $rent['NgayTra'] . "</td>";
+                    echo "<td class=\"border-dark\">" . $rent['NguoiNhan'] . "</td>";
+                    echo "<td class=\"border-dark\">" .(date("Y-m-d") <= date("Y-m-d",strtotime($rent['HanTra']))?"Đúng Hạn":"Quá Hạn"). "</td>";
+                    echo '<td class="border-dark">';
+                    echo '<a  href="index.php?controller=rent&action=edit&ID_MuonTra=' . $rent['ID_MuonTra'] . '"><i class="fas fa-edit"></i></a>';
+                    echo '<a class="ml-3" href="index.php?controller=rent&action=delete&ID_MuonTra=' . $rent['ID_MuonTra'] . '">Trả</a>';
+                    echo "</tr>"; 
                 }
             }
             ?>
