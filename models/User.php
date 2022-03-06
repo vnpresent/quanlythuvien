@@ -48,6 +48,13 @@ class User
         return query($query);
     }
 
+    function changepass($pass)
+    {
+        $query = "UPDATE `nguoidung` SET  Password = '$pass' WHERE id = $this->id";
+        print($query);
+        return query($query);
+    }
+
     function delete()
     {
         $query = "update nguoidung set status = 0 where id = $this->id";

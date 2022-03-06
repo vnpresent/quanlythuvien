@@ -1,9 +1,10 @@
 <div class="container col-10">
-    <form action="index.php?controller=user&action=password&id=<?php echo $data['id']; ?>" method="post">
+    <form action="index.php?controller=user&action=pass" method="post">
         <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Tài Khoản</label>
+            <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">username</label>
             <div class="col-sm-10">
-                <input type="text" disabled class="form-control" value="<?php echo $data['username']; ?>">
+                <input type="text" disabled class="form-control" value="<?php echo $data['Username']; ?>">
             </div>
         </div>
         <div class="form-group row">
@@ -26,7 +27,7 @@
         <div class="form-group row mx-auto">
             <div class="col-sm-2"></div>
             <button type="submit" class="btn btn-primary">Cập Nhật</button>
-            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=user&action=update&id=<?php echo $data['id']; ?>" role="button">Thoát</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=user" role="button">Thoát</a>
         </div>
     </form>
 </div>
