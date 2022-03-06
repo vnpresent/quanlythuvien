@@ -7,6 +7,7 @@ include_once('./models/Language.php');
 include_once('./models/Author.php');
 include_once('./models/Position.php');
 include_once('./models/Unit.php');
+include_once('./models/DocumentDetail.php');
 
 
 class documentController
@@ -90,6 +91,22 @@ class documentController
             else
                 $result = 'false';
             header('location:index.php?controller=document&action=edit&result='.$result.'&MaTL='.$_POST['MaTL']);
+        }
+    }
+
+    public function view()
+    {
+        if((Auth::isadmin()  || Auth::isKyThuat()) && isset($_GET['MaTL']))
+        {
+            $data = Document::show($_GET['MaTL']);
+            $categorys = Category::index();
+            $documentdetails=DocumentDetail::find($_GET['MaTL']);
+            $publishs = Publish::index();
+            $languages = Language::index();
+            $authors = Author::index();
+            $positions = Position::index();
+            $units = Unit::index();
+            include_once('./views/document/view.php');
         }
     }
 

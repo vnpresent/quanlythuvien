@@ -8,6 +8,8 @@ class documentdetailController
         if(Auth::isadmin())
         {
             $data=DocumentDetail::index();
+            if (isset($_GET['MaTL']))
+                $data=DocumentDetail::find($_GET['MaTL']);
             include_once('./views/documentdetail/index.php');
         }
     }
