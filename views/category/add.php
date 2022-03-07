@@ -1,6 +1,6 @@
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=category&action=insert" method="post">
-        <h2>Thêm tác giả</h2>
+        <h2>Thêm thể loại</h2>
         
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Tên thể loại</label>

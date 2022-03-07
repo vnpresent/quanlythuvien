@@ -24,12 +24,12 @@
     <table class="table table-striped bg-white rounded shadow-sm  table-hover">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a name="" id="" class="btn btn-info" href="index.php?controller=rent&action=add" role="button" style="margin-bottom:10px;margin-right:20px;width:100px;">Mượn</a>
-            <a name="" id="" class="btn btn-info" href="index.php?controller=rent&action=back" role="button" style="margin-bottom:10px;width:100px;">Trả</a>
+            <!-- <a name="" id="" class="btn btn-info" href="index.php?controller=rent&action=back" role="button" style="margin-bottom:10px;width:200px;">Danh sách trả tài liệu</a> -->
         </div>
         <thead class="bg-info text-white">
             <tr class="border-dark">
                 <th>ID_MuonTra</th>
-                <th>Só thẻ</th>
+                <th>Số thẻ</th>
                 <th>Mã cá biệt</th>
                 <th>Kiểu mượn</th>
                 <th>Ngày mượn</th>

@@ -17,7 +17,7 @@ if(Auth::isLogin()  && $_SERVER['REQUEST_METHOD'] != 'POST') {
                         <a href="index.php?controller=document&action=index" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                         <i class="fas fa-book" style="margin-right:10px"></i>Tài liệu</a>
                         <?php } ?>
-                        <?php if (Auth::isAdmin()) { ?>
+                        <?php if (Auth::isAdmin() || Auth::isKyThuat()) { ?>
                         <a href="index.php?controller=position&action=index" class="dropdown-item list-group-item list-group-item-action bg-transparent second-text fw-bold">
                         <i class="fas fa-map-pin" style="margin-right:10px"></i>Vị trí sách</a>
                         <?php } ?>
@@ -25,14 +25,15 @@ if(Auth::isLogin()  && $_SERVER['REQUEST_METHOD'] != 'POST') {
                         <a href="index.php?controller=rent&action=index" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
                         <i class="fas fa-cash-register" style="margin-right:10px"></i>Mượn, trả tài liệu</a>
                         <?php } ?>
-                        <?php if (Auth::isAdmin() || Auth::isThuThu()) { ?>
+                        <?php if (Auth::isAdmin()|| Auth::isThuThu()) { ?>
                         <a href="index.php?controller=enter&action=index" class="dropdown-item list-group-item list-group-item-action bg-transparent second-text fw-bold">
                         <i class="fas fa-file-invoice" style="margin-right:10px"></i>Phiếu nhập</a>
                         <?php } ?>
-                        <?php if (Auth::isAdmin() || Auth::isThuThu() || Auth::isKeHoach()) { ?>
+                        <?php if (Auth::isAdmin()|| Auth::isKyThuat() || Auth::isThuThu() || Auth::iskeHoach()) { ?>
                         <a href="#" class="dropdown-item list-group-item list-group-item-action bg-transparent second-text fw-bold">
                         <i class="fas fa-chart-line" style="margin-right:10px"></i>Thống kê</a>
                         <?php } ?>
+                        <?php if (Auth::isAdmin() || Auth::isKyThuat() || Auth::isThuThu()) { ?>
                         <div class="dropdown dropright">
                                 <button type="button" class="list-group-item list-group-item-action bg-transparent second-text fw-bold " data-toggle="dropdown">
                                 <i class="fas fa-plus" style="margin-right:10px"></i></i>Thêm chức năng
@@ -66,11 +67,11 @@ if(Auth::isLogin()  && $_SERVER['REQUEST_METHOD'] != 'POST') {
                                         <a href="index.php?controller=reader&action=index" class="dropdown-item list-group-item list-group-item-action bg-transparent second-text fw-bold">
                                         <i class="fas fa-book-reader" style="margin-right:10px"></i>Độc giả</a>
                                         <?php } ?>
-                                        <?php if (Auth::isAdmin() || Auth::isKyThuat()) { ?>
+                                        <?php if (Auth::isAdmin()|| Auth::isKyThuat()) { ?>
                                         <a href="index.php?controller=author&action=index" class="dropdown-item list-group-item list-group-item-action bg-transparent second-text fw-bold">
                                         <i class="fas fa-feather" style="margin-right:10px"></i>Tác giả</a>
                                         <?php } ?>
-                                        <?php if (Auth::isAdmin() || Auth::isKyThuat()) { ?>
+                                        <?php if (Auth::isAdmin()|| Auth::isKyThuat()) { ?>
                                         <a href="index.php?controller=category&action=index" class="dropdown-item list-group-item list-group-item-action bg-transparent second-text fw-bold">
                                         <i class="fas fa-th-list" style="margin-right:10px"></i>Thể loại</a>
                                         <?php } ?>
@@ -80,6 +81,7 @@ if(Auth::isLogin()  && $_SERVER['REQUEST_METHOD'] != 'POST') {
                                         <?php } ?>
                                 </div>
                         </div>
+                        <?php } ?>
                         <a href="index.php?controller=auth&action=logout" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2" style="margin-right:10px"></i>Đăng xuất</a>
                 </div>
