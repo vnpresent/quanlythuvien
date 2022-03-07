@@ -26,6 +26,13 @@ class Breach
         return $data;
     }
 
+    public static function violatingreaders()
+    {
+        $query = "SELECT DISTINCT SoThe FROM xulyvp;";
+        $data = getalldata($query);
+        return $data;
+    }
+
     public function save()
     {
         $user = Auth::$Username;
