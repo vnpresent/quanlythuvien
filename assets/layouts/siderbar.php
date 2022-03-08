@@ -30,7 +30,7 @@ if(Auth::isLogin()  && $_SERVER['REQUEST_METHOD'] != 'POST') {
                         <i class="fas fa-file-invoice" style="margin-right:10px"></i>Phiếu nhập</a>
                         <?php } ?>
                         <?php if (Auth::isAdmin()|| Auth::isKyThuat() || Auth::isThuThu() || Auth::iskeHoach()) { ?>
-                        <a href="#" class="dropdown-item list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                        <a href="index.php?controller=statis&action=index" class="dropdown-item list-group-item list-group-item-action bg-transparent second-text fw-bold">
                         <i class="fas fa-chart-line" style="margin-right:10px"></i>Thống kê</a>
                         <?php } ?>
                         <?php if (Auth::isAdmin() || Auth::isKyThuat() || Auth::isThuThu()) { ?>
