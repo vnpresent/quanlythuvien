@@ -2,7 +2,7 @@
 
 
 // số tài liệu đang được mượn
-echo count(Rent::statisdocument());
+echo is_array(Rent::statisdocument())?count(Rent::statisdocument()):'0';
 
 // số đọc giả đang mượn sách
 echo count(Rent::statisreader());
