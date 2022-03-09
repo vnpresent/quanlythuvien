@@ -1,0 +1,10 @@
+request tim kiem tac gia voi ten tra ve json
+http://localhost/quanlythuvien/index.php?controller=author&action=search&TenTG=phuong
+
+
+request tìm kiếm những quyển sách còn lại trong thư viện(chưa được mượn) với mã cá biệt gần giống 1,trả về json
+http://localhost/quanlythuvien/index.php?controller=rent&action=searchmuon&MaCaBiet=1
+
+
+request tìm kiếm những quyển sách chưa trả có mã cá biệt gần giống 1 của đọc giả có SoThe là 1
+http://localhost/quanlythuvien/index.php?controller=rent&action=searchtra&MaCaBiet=1&SoThe=1

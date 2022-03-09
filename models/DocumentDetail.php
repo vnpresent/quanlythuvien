@@ -27,9 +27,9 @@ class DocumentDetail
         return $data;
     }
 
-    public static function searchtra($MaCaBiet)
+    public static function searchtra($SoThe,$MaCaBiet)
     {
-        $query = "SELECT * FROM chitietmt WHERE MaCaBiet LIKE '$MaCaBiet%' AND Loai = 'muon';";
+        $query = "SELECT * FROM chitietmt WHERE chitietmt.Loai = 'muon' AND chitietmt.MaCaBiet LIKE '%$MaCaBiet%' AND chitietmt.ID_MuonTra IN (SELECT ID_MuonTra FROM muontra WHERE muontra.SoThe = '$SoThe');";
         $data = getalldata($query);
         return $data;
     }

@@ -110,10 +110,10 @@ class rentController
 
     public function searchtra()
     {
-        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['MaCaBiet']))
+        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['MaCaBiet']) && isset($_GET['SoThe']))
         {
             header('Content-type: application/json');
-            $data = DocumentDetail::searchtra($_GET['MaCaBiet'],'tra');
+            $data = DocumentDetail::searchtra($_GET['MaCaBiet'],$_GET['SoThe']);
             echo json_encode($data);
             exit();
         }
