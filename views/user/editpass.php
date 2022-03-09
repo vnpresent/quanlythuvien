@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container col-10">
     <form action="index.php?controller=user&action=pass" method="post">
         <div class="form-group row">
@@ -31,3 +33,4 @@
         </div>
     </form>
 </div>
+<?php include_once('././assets/layouts/footer.php'); ?>

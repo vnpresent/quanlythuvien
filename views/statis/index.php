@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <?php
 
 
@@ -140,3 +142,4 @@ echo count(Breach::violatingreaders());
             el.classList.toggle("toggled");
         };
     </script>
+<?php include_once('././assets/layouts/footer.php'); ?>

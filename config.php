@@ -60,6 +60,19 @@ function getonedata($query)
         return false;
 }
 
+function getid($query)
+{
+    global $connect;
+    connect();
+    mysqli_query($connect,$query);
+    $result = mysqli_query($connect,'SELECT @@IDENTITY as id;');
+    disconnect();
+    if($result&&mysqli_num_rows($result)==1)
+        return mysqli_fetch_assoc($result);
+    else
+        return false;
+}
+
 function rand_string( $length ) {
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     $str='';

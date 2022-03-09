@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=rent&action=insert" method="post">
         <h2>Mượn tài liệu</h2>
@@ -12,26 +14,58 @@
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Mã cá biệt</label>
             <div class="col-sm-6">
-                <textarea name="MaCaBiet" id="" cols="80" rows="10"></textarea>
+                <input name="MaCaBiet[]" id="" cols="80" rows="10">
             </div>
-        </div>
 
-        <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Kiểu mượn</label>
             <div class="col-sm-6">
-                <select class="form-control" name="KieuMuon" id="">
+                <select class="form-control" name="KieuMuon[]" id="">
                     <option value="demve" selected >Đem Về</option>
-                    <!-- <option value="taicho">Tại Chỗ</option> -->
+                    <option value="taicho">Tại Chỗ</option>
                 </select>
+            </div>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Hạn trả</label>
+            <div class="col-sm-6">
+                <input type="date" name="HanTra[]"  class="form-control" required="required">
             </div>
         </div>
 
         <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Mã cá biệt</label>
+            <div class="col-sm-6">
+                <input name="MaCaBiet[]" id="" cols="80" rows="10">
+            </div>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Kiểu mượn</label>
+            <div class="col-sm-6">
+                <select class="form-control" name="KieuMuon[]" id="">
+                    <option value="demve" selected >Đem Về</option>
+                    <option value="taicho">Tại Chỗ</option>
+                </select>
+            </div>
             <label for="inputEmail3" class="col-sm-2 col-form-label">Hạn trả</label>
             <div class="col-sm-6">
-                <input type="date" name="HanTra"  class="form-control" required="required">
+                <input type="date" name="HanTra[]"  class="form-control" required="required">
             </div>
         </div>
+
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Mã cá biệt</label>
+            <div class="col-sm-6">
+                <input name="MaCaBiet[]" id="" cols="80" rows="10">
+            </div>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Kiểu mượn</label>
+            <div class="col-sm-6">
+                <select class="form-control" name="KieuMuon[]" id="">
+                    <option value="demve" selected >Đem Về</option>
+                    <option value="taicho">Tại Chỗ</option>
+                </select>
+            </div>
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Hạn trả</label>
+            <div class="col-sm-6">
+                <input type="date" name="HanTra[]"  class="form-control" required="required">
+            </div>
+        </div>
+
 
         <div class="form-group row">
             <div class="col-sm-2"></div>
@@ -50,3 +84,4 @@
         </div>
     </form>
 </div>
+<?php include_once('././assets/layouts/footer.php'); ?>

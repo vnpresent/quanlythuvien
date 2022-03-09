@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container-fluid" style="padding-top:20px">
 <h2>Chỉnh sửa nhà xuất bản</h2>
     <form action="index.php?controller=publish&action=update" method="post">
@@ -35,3 +37,4 @@
         </div>
     </form>
 </div>
+<?php include_once('././assets/layouts/footer.php'); ?>

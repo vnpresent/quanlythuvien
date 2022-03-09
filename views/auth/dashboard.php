@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
@@ -146,3 +148,4 @@
             </div>
         </div>
     </div>
+<?php include_once('././assets/layouts/footer.php'); ?>

@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
 *{
@@ -130,3 +132,4 @@ input[type="submit"]:hover{
         </div>
       </form>
     </div>
+<?php include_once('././assets/layouts/footer.php'); ?>

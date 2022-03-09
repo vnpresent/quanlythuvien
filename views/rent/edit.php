@@ -1,17 +1,18 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container-fluid" style="padding-top:20px">
 <h2>Chỉnh sửa</h2>
     <form action="index.php?controller=rent&action=update" method="post">
 
-        <input type="text" hidden name="ID_MuonTra" class="form-control" required="required" value="<?php echo $data['ID_MuonTra'] ?>">
+        <input type="text" hidden name="id" class="form-control" required="required" value="<?php echo $data['id'] ?>">
 
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Kiểu mượn</label>
             <div class="col-sm-8">
                 <select class="form-control" name="KieuMuon" id="">
-                    <option value="demve" selected>Đem Về</option>
-                    <!-- <option value="taicho">Tại Chỗ</option> -->
+                    <option value="demve" <?php echo $data['KieuMuon']=="demve"?"selected":"";  ?> >Đem Về</option>
+                    <option value="taicho" <?php echo $data['KieuMuon']=="taicho"?"selected":"";  ?> >Tại Chỗ</option>
                 </select>
-                <!-- <input type="text" name="KieuMuon"  class="form-control" required="required" value="<?php echo $data['KieuMuon'] ?>"> -->
             </div>
         </div>
 
@@ -39,3 +40,4 @@
         </div>
     </form>
 </div>
+<?php include_once('././assets/layouts/footer.php'); ?>

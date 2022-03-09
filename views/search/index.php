@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=search" method="get">
         <h2>Tìm kiếm</h2>
@@ -69,3 +71,4 @@ if (isset($data) && is_array($data)) {
 <?php } ?>
 </div>
 
+<?php include_once('././assets/layouts/footer.php'); ?>

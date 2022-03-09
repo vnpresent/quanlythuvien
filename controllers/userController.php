@@ -40,7 +40,7 @@ class userController
             {
                 if(isset($_POST[$prop]))
                 {
-                    $user->$prop = $_POST[$prop];
+                    $user->$prop = trim($_POST[$prop]);
                 }
             }
             if($user->save())

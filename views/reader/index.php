@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container-fluid" style="padding-top:20px">
     <h2>Độc giả</h2>
     <table class="table table-striped bg-white rounded shadow-sm  table-hover">
@@ -42,3 +44,4 @@
             ?>
     </table>
 </div>
+<?php include_once('././assets/layouts/footer.php'); ?>

@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=user&action=update&id=<?php echo $data['id']; ?>" method="post">
     <h2>Chỉnh sửa tài khoản</h2>
@@ -31,7 +33,7 @@
 
             <label for="inputEmail3" class="col-1 col-form-label">Email</label>
             <div class="col-sm-3">
-                <input type="text" name="Email" class="form-control" value="<?php echo $data['Email']; ?>" required="required">
+                <input type="text" pattern="[0-9]" name="Email" class="form-control" value="<?php echo $data['Email']; ?>" required="required">
             </div>
         </div>
 
@@ -40,7 +42,7 @@
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Điện thoại</label>
             <div class="col-sm-8">
-                <input type="text" name="DienThoai" class="form-control" value="<?php echo $data['DienThoai']; ?>" required="required">
+                <input type="tel" name="DienThoai" class="form-control" value="<?php echo $data['DienThoai']; ?>" required="required">
             </div>
         </div>
 
@@ -60,3 +62,4 @@
         </div>
     </form>
 </div>
+<?php include_once('././assets/layouts/footer.php'); ?>

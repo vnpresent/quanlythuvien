@@ -1,6 +1,8 @@
 <?php
 include_once('./models/Auth.php');
 include_once('./models/Rent.php');
+include_once('./models/DocumentDetail.php');
+include_once('./models/RentDetail.php');
 class rentController
 {
 
@@ -25,35 +27,51 @@ class rentController
     {
         if((Auth::isadmin() || Auth::isThuThu()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
+            $MaCaBiet = $_POST['MaCaBiet'];
             $rent = new Rent();
+            $rent->SoThe = $_POST['SoThe'];
 
-            foreach($rent->fill as $prop)
+            $result = $rent->save();
+            if($result)
             {
-                if(isset($_POST[$prop]))
+                $id = $result['id'];
+                $MaCaBiets = $_POST['MaCaBiet'];
+                $KieuMuons = $_POST['KieuMuon'];
+                $HanTras = $_POST['HanTra'];
+                if(count($MaCaBiets) ==  count($KieuMuons) && count($KieuMuons) == count($HanTras))
                 {
-                    $rent->$prop = $_POST[$prop];
+                    for($i=0; $i< count($MaCaBiets);$i++)
+                    {
+                        $rentdetail = new RentDetail();
+                        $rentdetail->ID_MuonTra = $id;
+                        $rentdetail->MaCaBiet = $MaCaBiets[$i];
+                        $rentdetail->KieuMuon = $KieuMuons[$i];
+                        $rentdetail->HanTra = $HanTras[$i];
+                        $rentdetail->save();
+                    }
+                    header('location:index.php?controller=rent&action=add&result=true');
+                }
+                else
+                {
+                    header('location:index.php?controller=rent&action=add&result=false');
                 }
             }
-
-            $arr = explode("\r\n", trim($_POST['MaCaBiet']));
-            foreach($arr as $ma)
+            else
             {
-                $rent->MaCaBiet = $ma;
-                $rent->save();
+                header('location:index.php?controller=rent&action=add&result=false');
             }
             // if($rent->save())
             //     $result = 'true';
             // else
             //     $result = 'false';
-            header('location:index.php?controller=rent&action=add&result=true');
         }
     }
 
     public function edit()
     {
-        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['ID_MuonTra']))
+        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['id']))
         {
-            $data = Rent::show($_GET['ID_MuonTra']);
+            $data = RentDetail::show($_GET['id']);
             include_once('./views/rent/edit.php');
         }
     }
@@ -62,20 +80,42 @@ class rentController
     {
         if((Auth::isadmin() || Auth::isThuThu()) && $_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            $rent = new Rent();
+            $rentdetail = new RentDetail();
 
-            foreach($rent->fill as $prop)
+            foreach($rentdetail->fill as $prop)
             {
                 if(isset($_POST[$prop]))
                 {
-                    $rent->$prop = $_POST[$prop];
+                    $rentdetail->$prop = $_POST[$prop];
                 }
             }
-            if($rent->update())
+            if($rentdetail->update())
                 $result = 'true';
             else
                 $result = 'false';
-            header('location:index.php?controller=rent&action=edit&result='.$result.'&ID_MuonTra='.$_POST['ID_MuonTra']);
+            header('location:index.php?controller=rent&action=edit&result='.$result.'&id='.$_POST['id']);
+        }
+    }
+
+    public function searchmuon()
+    {
+        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['MaCaBiet']))
+        {
+            header('Content-type: application/json');
+            $data = DocumentDetail::searchmuon($_GET['MaCaBiet']);
+            echo json_encode($data);
+            exit();
+        }
+    }
+
+    public function searchtra()
+    {
+        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['MaCaBiet']))
+        {
+            header('Content-type: application/json');
+            $data = DocumentDetail::searchtra($_GET['MaCaBiet'],'tra');
+            echo json_encode($data);
+            exit();
         }
     }
 
@@ -87,36 +127,29 @@ class rentController
     //     }
     // }
 
-    // public function rentinfo()
-    // {
-    //     if(Auth::isadmin() && isset($_POST['MaCaBiet']) && isset($_POST['SoThe']))
-    //     {
-    //         print($_POST['MaCaBiet'].':'.$_POST['SoThe']);
-    //         $data = array();
-    //         $arr = explode("\r\n", trim($_POST['MaCaBiet']));
-    //         foreach($arr as $ma)
-    //         {
-    //             array_push($data,Rent::find($_POST['SoThe'],$ma));
-    //         }
-    //         include_once('./views/rent/rentinfo.php');
-    //     }
-    // }
+    public function rentinfo()
+    {
+        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['ID_MuonTra']) )
+        {
+            $data = RentDetail::find($_GET['ID_MuonTra']);
+            include_once('./views/rent/rentinfo.php');
+        }
+    }
 
-    // public function return()
-    // {
-    //     if(isset($_GET['SoThe']) && isset($_GET['MaCaBiet']) && Auth::isadmin())
-    //     {
-    //         $rent = new Rent();
-    //         $rent->MaCaBiet = $_GET['MaCaBiet'];
-    //         $rent->SoThe = $_GET['SoThe'];
-    //         $rent->return();
-    //         header('location:index.php?controller=rent');
-    //     }
-    //     else
-    //     {
-    //         header('location:index.php');
-    //     }
-    // }
+    public function return()
+    {
+        if(isset($_GET['id']) && (Auth::isadmin() || Auth::isThuThu()))
+        {
+            $rentdetail = new RentDetail();
+            $rentdetail->id = $_GET['id'];
+            $rentdetail->return();
+            header('location:index.php?controller=rent&action=rentinfo&'.'ID_MuonTra='.$_GET['ID_MuonTra']);
+        }
+        else
+        {
+            // header('location:index.php');
+        }
+    }
 
     public function delete()
     {

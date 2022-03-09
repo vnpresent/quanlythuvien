@@ -68,8 +68,8 @@ class Rent
     {
         $Ngay= date("Y/m/d");
         $user = Auth::$Username;
-        $query = "INSERT INTO `muontra` (`ID_MuonTra`,`SoThe`, `MaCaBiet`, `KieuMuon`, `NgayMuon`, `NguoiChoMuon`, `HanTra`, `Loai`,`NgayTra`,`NguoiNhan`) VALUES (NULL, '$this->SoThe','$this->MaCaBiet', '$this->KieuMuon' , '$Ngay', '$user', '$this->HanTra','Muon','','');";
-        return query($query);
+        $query = "INSERT INTO `muontra` (`ID_MuonTra`, `SoThe`, `NgayMuon`, `NguoiChoMuon`) VALUES (NULL, '$this->SoThe', '$Ngay', '$user');";
+        return getid($query);
     }
 
     function update()

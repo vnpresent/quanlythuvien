@@ -22,6 +22,13 @@ class Author
         return $data;
     }
 
+    public static function search($TenTG)
+    {
+        $query = "select * from tacgia where TenTG like '%$TenTG%';";
+        $data = getalldata($query);
+        return $data;
+    }
+
     public function save()
     {
         $query = "INSERT INTO `tacgia` (`MaTG`, `TenTG`, `GhiChu`, `status`) VALUES (NULL, '$this->TenTG', '$this->GhiChu' ,'1');";

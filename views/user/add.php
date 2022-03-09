@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=user&action=insert" method="post">
         <h2>Thêm người dùng</h2>
@@ -46,7 +48,7 @@
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Điện thoại</label>
             <div class="col-sm-8">
-                <input type="text" name="DienThoai"  class="form-control" required="required">
+                <input type="tel" pattern="[0-9]" name="DienThoai"  class="form-control" required="required">
             </div>
         </div>
 
@@ -68,3 +70,4 @@
         </div>
     </form>
 </div>
+<?php include_once('././assets/layouts/footer.php'); ?>

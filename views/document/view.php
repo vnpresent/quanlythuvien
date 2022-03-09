@@ -1,3 +1,5 @@
+<?php include_once('././assets/layouts/header.php'); ?>
+<?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container-fluid" style="padding-top:20px">
     <h2>Xem tài liệu</h2>
     <input type="text" hidden name="MaTL" class="form-control"  value="<?php echo $data['MaTL'] ?>">
@@ -173,3 +175,4 @@
     </div>
 </div>
 
+<?php include_once('././assets/layouts/footer.php'); ?>

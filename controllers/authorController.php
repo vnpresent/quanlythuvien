@@ -13,6 +13,17 @@ class authorController
         }
     }
 
+    public function search()
+    {
+        if((Auth::isadmin() || Auth::isThuThu()) && isset($_GET['TenTG']))
+        {
+            header('Content-type: application/json');
+            $data = Author::search($_GET['TenTG']);
+            echo json_encode($data);
+            exit();
+        }
+    }
+
     public function add()
     {
         if((Auth::isadmin() || Auth::isKyThuat()))

@@ -20,6 +20,20 @@ class DocumentDetail
         return $data;
     }
 
+    public static function searchmuon($MaCaBiet)
+    {
+        $query = "SELECT * FROM tlchitiet WHERE MaCaBiet LIKE '$MaCaBiet%' AND MaCaBiet NOT IN (SELECT MaCaBiet FROM chitietmt WHERE Loai = 'muon');";
+        $data = getalldata($query);
+        return $data;
+    }
+
+    public static function searchtra($MaCaBiet)
+    {
+        $query = "SELECT * FROM chitietmt WHERE MaCaBiet LIKE '$MaCaBiet%' AND Loai = 'muon';";
+        $data = getalldata($query);
+        return $data;
+    }
+
     public static function find($MaTL)
     {
         $query = "select * from tlchitiet where MaTL = '$MaTL'";
