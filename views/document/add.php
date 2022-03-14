@@ -3,6 +3,16 @@
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=document&action=insert" method="post">
         <h2>Thêm tài liệu</h2>
+        <div class="col-sm-10" style="margin-bottom:10px">
+        <div class="d-inline-flex p-2 bd-highlight">
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=category&action=add" role="button">Thêm thể loại</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=unit&action=add" role="button">Thêm đơn vị</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=author&action=add" role="button">Thêm tác giả</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=publish&action=add" role="button">Thêm nhà xuất bản</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=language&action=add" role="button">Thêm ngôn ngữ</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=position&action=add" role="button">Thêm vị trí</a>
+        </div>
+    </div>
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Tên tài liệu</label>
             <div class="col-sm-8">
