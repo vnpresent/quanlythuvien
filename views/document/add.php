@@ -59,7 +59,7 @@
 
                     function alert(message, type) {
                     var wrapper = document.createElement('div')
-                    wrapper.innerHTML = '<div id="div1" class="row" style="margin-top:10px;"><select name="MaTG" class="form-control" aria-label="Default select example">'+'<?php foreach($authors as $author) {?>'+'<?php }?>'+'</select></div>'
+                    wrapper.innerHTML = '<div id="div1" class="row" style="margin-top:10px;"><select name="MaTG" class="form-control" aria-label="Default select example">'+'<?php foreach($authors as $author) {echo "<option value=".$author['MaTG'].">".$author['TenTG']."</option>";}?>'+'</select></div>'
                     alertPlaceholder.append(wrapper )
                     }
 
