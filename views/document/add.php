@@ -39,16 +39,14 @@
             <label for="inputEmail3" class="col-1 col-form-label">Tác giả</label>
             <div class="col-sm-2">
                 
-                
-                    
-                        <select name="MaTG" class="form-control" aria-label="Default select example">
-                            <?php
-                                foreach($authors as $author)
-                                {
-                                    echo "<option value='".$author['MaTG']."' selected>".$author['TenTG']."</option>";
-                                }
-                            ?>
-                        </select>
+                <select name="MaTG" class="form-control" aria-label="Default select example">
+                    <?php
+                        foreach($authors as $author)
+                        {
+                            echo "<option value='".$author['MaTG']."' selected>".$author['TenTG']."</option>";
+                        }
+                    ?>
+                </select>
                     
                     <!-- <div class="col-sm-2 col-md-2"><a  href="#"><i class="fas fa-trash"></i></a></div> -->
                 

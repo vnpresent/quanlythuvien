@@ -48,7 +48,7 @@
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Điện thoại</label>
             <div class="col-sm-8">
-                <input type="tel" pattern="[0-9]" name="DienThoai"  class="form-control" required="required">
+                <input type="tel" pattern="[0-9]*" name="DienThoai"  class="form-control" required="required">
             </div>
         </div>
 
