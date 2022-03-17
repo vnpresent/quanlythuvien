@@ -3,6 +3,16 @@
 <div class="container-fluid" style="padding-top:20px">
     <form action="index.php?controller=document&action=update" method="post">
     <h2>Chỉnh sửa tài liệu</h2>
+    <div class="col-sm-10" style="margin-bottom:10px">
+        <div class="d-inline-flex p-2 bd-highlight">
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=category&action=add" role="button">Thêm thể loại</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=unit&action=add" role="button">Thêm đơn vị</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=author&action=add" role="button">Thêm tác giả</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=publish&action=add" role="button">Thêm nhà xuất bản</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=language&action=add" role="button">Thêm ngôn ngữ</a>
+            <a name="" id="" class="btn btn-primary ml-2" href="index.php?controller=position&action=add" role="button">Thêm vị trí</a>
+        </div>
+    </div>
         <input type="text" hidden name="MaTL" class="form-control" required="required" value="<?php echo $data['MaTL'] ?>">
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">TenTL</label>
@@ -53,7 +63,7 @@
 
                     function alert(message, type) {
                     var wrapper = document.createElement('div')
-                    wrapper.innerHTML = '<div id="div1" class="row" style="margin-top:10px;"><select name="MaTG" class="form-control" aria-label="Default select example">'+'<?php foreach($authors as $author) {?>'+'<?php }?>'+'</select></div>'
+                    wrapper.innerHTML = '<div id="div1" class="row" style="margin-top:10px;"><select name="MaTG" class="form-control" aria-label="Default select example">'+'<?php foreach($authors as $author) {echo "<option value=".$author['MaTG'].">".$author['TenTG']."</option>";}?>'+'</select></div>'
                     alertPlaceholder.append(wrapper )
                     }
 

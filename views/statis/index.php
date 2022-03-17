@@ -3,6 +3,7 @@
 <?php
 
 
+<<<<<<< HEAD
 // số tài liệu đang được mượn
 echo Statis::statisdocument();
 
@@ -20,6 +21,19 @@ echo Statis::violatingreaders();
 
 // số sách nhập trong tháng
 echo Statis::statisenter();
+=======
+// // số tài liệu đang được mượn
+// echo is_array(Rent::statisdocument())?count(Rent::statisdocument()):'0';
+
+// // số đọc giả đang mượn sách
+// echo count(Rent::statisreader());
+
+// // số tài liệu còn lại
+// echo count(Rent::statisdocumentremain());
+
+// // độc giả vi phạm
+// echo count(Breach::violatingreaders());
+>>>>>>> 3faca4a12ff4627fc7b1b95c31f97676c55ceeee
 
 ?>
 <div id="page-content-wrapper">

@@ -1,6 +1,7 @@
 <?php include_once('././assets/layouts/header.php'); ?>
 <?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container col-10">
+<h2>Đổi mật khẩu</h2>
     <form action="index.php?controller=user&action=pass" method="post">
         <div class="form-group row">
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
