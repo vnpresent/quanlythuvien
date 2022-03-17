@@ -42,6 +42,14 @@ class RentDetail
         return query($query);
     }
 
+    public static function returnpost($sothe,$macabiet)
+    {
+        $day = date('Y/m/d');
+        $user = Auth::$Username;
+        $query = " UPDATE chitietmt,muontra SET chitietmt.Loai = 'tra',chitietmt.NgayTra = '$day' ,chitietmt.NguoiNhan =  '$user' WHERE muontra.SoThe = '$sothe' AND muontra.ID_MuonTra = chitietmt.ID_MuonTra AND chitietmt.MaCaBiet = '$macabiet';";
+        return query($query);
+    }
+    
     public static function show($id)
     {
         $query = "select * from chitietmt where id = '$id'";

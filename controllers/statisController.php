@@ -1,7 +1,6 @@
 <?php
 include_once('./models/Auth.php');
-include_once('./models/Rent.php');
-include_once('./models/Breach.php');
+include_once('./models/Statis.php');
 class statisController
 {
     public function index()

@@ -43,27 +43,6 @@ class Rent
         return $data;
     }
 
-    public static function statisdocument()
-    {
-        $query = "SELECT MaCaBiet FROM muontra WHERE Loai = 'Muon'";
-        $data = getalldata($query);
-        return $data;
-    }
-
-    public static function statisreader()
-    {
-        $query = "SELECT DISTINCT SoThe FROM muontra WHERE Loai = 'Muon'";
-        $data = getalldata($query);
-        return $data;
-    }
-
-    public static function statisdocumentremain()
-    {
-        $query = "SELECT MaCaBiet FROM tlchitiet WHERE MaCaBiet NOT IN (SELECT MaCaBiet FROM muontra WHERE Loai = 'Muon');";
-        $data = getalldata($query);
-        return $data;
-    }
-
     public function save()
     {
         $Ngay= date("Y/m/d");

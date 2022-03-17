@@ -4,16 +4,22 @@
 
 
 // số tài liệu đang được mượn
-echo is_array(Rent::statisdocument())?count(Rent::statisdocument()):'0';
+echo Statis::statisdocument();
 
 // số đọc giả đang mượn sách
-echo count(Rent::statisreader());
+echo Statis::statisreader();
+
+// Tài Liệu thủ thư cho mượn
+echo Statis::statisdocumentrent();
 
 // số tài liệu còn lại
-echo count(Rent::statisdocumentremain());
+echo Statis::statisdocumentremain();
 
 // độc giả vi phạm
-echo count(Breach::violatingreaders());
+echo Statis::violatingreaders();
+
+// số sách nhập trong tháng
+echo Statis::statisenter();
 
 ?>
 <div id="page-content-wrapper">

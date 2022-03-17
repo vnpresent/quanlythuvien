@@ -1,7 +1,7 @@
 <?php include_once('././assets/layouts/header.php'); ?>
 <?php include_once('././assets/layouts/siderbar.php'); ?>
 <div class="container-fluid" style="padding-top:20px">
-    <form action="index.php?controller=rent&action=rentinfo" method="post">
+    <form action="index.php?controller=rent&action=returnpost" method="post">
         <h2>Trả tài liệu</h2>
         
         <div class="form-group row">
@@ -14,7 +14,21 @@
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Mã cá biệt</label>
             <div class="col-sm-6">
-                <textarea name="MaCaBiet" id="" cols="80" rows="10"></textarea>
+                <input name="MaCaBiet[]" id="" cols="80" rows="10">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Mã cá biệt</label>
+            <div class="col-sm-6">
+                <input name="MaCaBiet[]" id="" cols="80" rows="10">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Mã cá biệt</label>
+            <div class="col-sm-6">
+                <input name="MaCaBiet[]" id="" cols="80" rows="10">
             </div>
         </div>
 

@@ -119,13 +119,31 @@ class rentController
         }
     }
 
-    // public function back()
-    // {
-    //     if(Auth::isadmin())
-    //     {
-    //         include_once('./views/rent/back.php');
-    //     }
-    // }
+    public function back()
+    {
+        if(Auth::isadmin() || Auth::isThuThu())
+        {
+            include_once('./views/rent/back.php');
+        }
+    }
+
+    public function returnpost()
+    {
+        if(isset($_POST['SoThe']) && (Auth::isadmin() || Auth::isThuThu()))
+        {
+            $MaCaBiets = $_POST['MaCaBiet'];
+            foreach($MaCaBiets as $MaCaBiet)
+            {
+                print($MaCaBiet);
+                RentDetail::returnpost($_POST['SoThe'],$MaCaBiet);
+            }         
+            header('location:index.php?controller=rent&action=back&result=true');
+        }
+        else
+        {
+            header('location:index.php');
+        }
+    }
 
     public function rentinfo()
     {
