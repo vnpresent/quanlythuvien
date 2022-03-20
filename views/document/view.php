@@ -33,13 +33,22 @@
         </div>
         <label for="inputEmail3" class="col-1 col-form-label">Tác giả</label>
         <div class="col-sm-2">
-            <select name="MaTG" class="form-control" readonly aria-label="Default select example">
-                <?php
-                foreach ($authors as $author) {
-                    echo "<option value='" . $author['MaTG'] . "' " . ($author['MaTG'] == $data['MaTG'] ? 'selected' : '') . " >" . $author['TenTG'] . "</option>";
+        <?php
+                foreach(json_decode($data['MaTG']) as $MaTG)
+                {
+                    ?>
+                        <select name="MaTG[]" readonly class="form-control" aria-label="Default select example">
+                    <?php
+                            foreach($authors as $author)
+                            {
+                                echo "<option value='".$author['MaTG']."' ".($author['MaTG']==$MaTG?'selected':'')." >".$author['TenTG']."</option>";
+                            }
+                        ?>
+                    </select>
+                    <div id="liveAlertPlaceholder" style="margin-top:10px;"></div>
+                    <?php
                 }
-                ?>
-            </select>
+            ?>
         </div>
     </div>
 

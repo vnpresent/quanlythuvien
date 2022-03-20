@@ -41,6 +41,11 @@ class categoryController
                 if(isset($_POST[$prop]))
                 {
                     $category->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=category&action=add&result=false');
+                        return;
+                    }
                 }
             }
             if($category->save())
@@ -71,6 +76,11 @@ class categoryController
                 if(isset($_POST[$prop]))
                 {
                     $category->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        return;
+                        header('location:index.php?controller=category&action=edit&result=false&MaTheLoai='.$_POST['MaTheLoai']);
+                    }
                 }
             }
             if($category->update())

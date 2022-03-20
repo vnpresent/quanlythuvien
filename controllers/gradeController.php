@@ -34,6 +34,11 @@ class gradeController
                 if(isset($_POST[$prop]))
                 {
                     $grade->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=grade&action=add&result=false');
+                        return;
+                    }
                 }
             }
             if($grade->save())
@@ -65,6 +70,11 @@ class gradeController
                 if(isset($_POST[$prop]))
                 {
                     $grade->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=grade&action=edit&result=false&MaLop='.$_POST['MaLop']);
+                        return;
+                    }
                 }
             }
             if($grade->update())

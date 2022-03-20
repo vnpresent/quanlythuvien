@@ -43,6 +43,11 @@ class authorController
                 if(isset($_POST[$prop]))
                 {
                     $author->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=author&action=add&result=false');
+                        return;
+                    }                      
                 }
             }
             if($author->save())
@@ -73,6 +78,11 @@ class authorController
                 if(isset($_POST[$prop]))
                 {
                     $author->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=author&action=edit&result=false&MaTG='.$_POST['MaTG']);
+                        return;
+                    }
                 }
             }
             if($author->update())

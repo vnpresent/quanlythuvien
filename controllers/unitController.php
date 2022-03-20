@@ -32,6 +32,12 @@ class unitController
                 if(isset($_POST[$prop]))
                 {
                     $unit->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=unit&action=add&result='.$result);
+                        return;
+                    }
                 }
             }
             if($unit->save())
@@ -62,6 +68,12 @@ class unitController
                 if(isset($_POST[$prop]))
                 {
                     $unit->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=unit&action=edit&result='.$result.'&MaDV='.$_POST['MaDV']);
+                        return;
+                    }
                 }
             }
             if($unit->update())

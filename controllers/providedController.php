@@ -32,6 +32,12 @@ class providedController
                 if(isset($_POST[$prop]))
                 {
                     $provided->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=provided&action=add&result='.$result);
+                        return;
+                    }
                 }
             }
             if($provided->save())
@@ -62,6 +68,12 @@ class providedController
                 if(isset($_POST[$prop]))
                 {
                     $provided->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=provided&action=edit&result='.$result.'&MaNCC='.$_POST['MaNCC']);
+                        return;
+                    }
                 }
             }
             if($provided->update())

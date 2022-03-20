@@ -32,6 +32,12 @@ class publishController
                 if(isset($_POST[$prop]))
                 {
                     $publish->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=publish&action=add&result='.$result);
+                        return;
+                    }
                 }
             }
             if($publish->save())
@@ -62,6 +68,12 @@ class publishController
                 if(isset($_POST[$prop]))
                 {
                     $publish->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=publish&action=edit&result='.$result.'&MaNXB='.$_POST['MaNXB']);
+                        return;
+                    }
                 }
             }
             if($publish->update())

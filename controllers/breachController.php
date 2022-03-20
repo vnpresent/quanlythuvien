@@ -32,6 +32,11 @@ class breachController
                 if(isset($_POST[$prop]))
                 {
                     $breach->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=breach&action=add&result=false');
+                        return;
+                    }
                 }
             }
             if($breach->save())
@@ -62,6 +67,11 @@ class breachController
                 if(isset($_POST[$prop]))
                 {
                     $breach->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=breach&action=edit&result=false&IDPhat='.$_POST['IDPhat']);
+                        return;
+                    }                      
                 }
             }
             if($breach->update())

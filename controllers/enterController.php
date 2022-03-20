@@ -36,6 +36,11 @@ class enterController
                 if(isset($_POST[$prop]))
                 {
                     $enter->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=enter&action=add&result=false');
+                        return;
+                    }
                 }
             }
             if($enter->save())
@@ -68,6 +73,11 @@ class enterController
                 if(isset($_POST[$prop]))
                 {
                     $enter->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=enter&action=edit&result=false&IDNhap='.$_POST['IDNhap']);
+                        return;
+                    }
                 }
             }
             if($enter->update())

@@ -46,15 +46,22 @@
             </div>
             <label for="inputEmail3" class="col-1 col-form-label">Tác giả</label>
             <div class="col-sm-2">
-                <select name="MaTG" class="form-control" aria-label="Default select example">
+            <?php
+                foreach(json_decode($data['MaTG']) as $MaTG)
+                {
+                    ?>
+                        <select name="MaTG[]" class="form-control" aria-label="Default select example">
                     <?php
                             foreach($authors as $author)
                             {
-                                echo "<option value='".$author['MaTG']."' ".($author['MaTG']==$data['MaTG']?'selected':'')." >".$author['TenTG']."</option>";
+                                echo "<option value='".$author['MaTG']."' ".($author['MaTG']==$MaTG?'selected':'')." >".$author['TenTG']."</option>";
                             }
                         ?>
                     </select>
                     <div id="liveAlertPlaceholder" style="margin-top:10px;"></div>
+                    <?php
+                }
+            ?>
                 <button type="button" class="btn btn-primary" id="liveAlertBtn" style="margin-top:10px;">Thêm tác giả</button>
                 <button type="button" id="close" class="btn btn-primary" id="liveAlertBtn" style="margin-top:10px;">Xóa tác giả</button>
                 <script>
@@ -63,7 +70,7 @@
 
                     function alert(message, type) {
                     var wrapper = document.createElement('div')
-                    wrapper.innerHTML = '<div id="div1" class="row" style="margin-top:10px;"><select name="MaTG" class="form-control" aria-label="Default select example">'+'<?php foreach($authors as $author) {echo "<option value=".$author['MaTG'].">".$author['TenTG']."</option>";}?>'+'</select></div>'
+                    wrapper.innerHTML = '<div id="div1" class="row" style="margin-top:10px;"><select name="MaTG[]" class="form-control" aria-label="Default select example">'+'<?php foreach($authors as $author) {echo "<option value=".$author['MaTG'].">".$author['TenTG']."</option>";}?>'+'</select></div>'
                     alertPlaceholder.append(wrapper )
                     }
 

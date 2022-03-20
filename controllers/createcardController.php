@@ -36,6 +36,11 @@ class createcardController
                 if(isset($_POST[$prop]))
                 {
                     $createcard->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=createcard&action=add&result=false');
+                        return;
+                    }
                 }
             }
             if($createcard->save())
@@ -68,6 +73,11 @@ class createcardController
                 if(isset($_POST[$prop]))
                 {
                     $createcard->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=createcard&action=edit&result=false&MaDK='.$_POST['MaDK']);
+                        return;
+                    }
                 }
             }
             if($createcard->update())

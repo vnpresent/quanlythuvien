@@ -32,6 +32,11 @@ class languageController
                 if(isset($_POST[$prop]))
                 {
                     $language->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=language&action=add&result=false');
+                        return;
+                    }
                 }
             }
             if($language->save())
@@ -62,6 +67,11 @@ class languageController
                 if(isset($_POST[$prop]))
                 {
                     $language->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=language&action=edit&result=false&MaNgonNgu='.$_POST['MaNgonNgu']);
+                        return;
+                    }
                 }
             }
             if($language->update())

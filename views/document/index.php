@@ -40,7 +40,12 @@
                         echo "<td class=\"border-dark\" scope=\"row\">" . $document['TenTL'] . "</td>";
                         echo "<td class=\"border-dark\">" . Category::show($document['MaTheLoai'])["TenTheLoai"] . "</td>";
                         echo "<td class=\"border-dark\">" . Unit::show($document['MaDV'])["TenDV"] . "</td>";
-                        echo "<td class=\"border-dark\">" . Author::show($document['MaTG'])["TenTG"] . "</td>";
+                        echo "<td class=\"border-dark\">";
+                        foreach(json_decode($document['MaTG']) as $MaTG)
+                        {
+                            echo Author::show($MaTG)["TenTG"].',';
+                        }
+                        echo "</td>";
                         echo "<td class=\"border-dark\">" . Publish::show($document['MaNXB'])["TenNXB"] . "</td>";
                         // echo "<td class=\"border-dark\">" . $document['NamXB'] . "</td>";
                         echo "<td class=\"border-dark\">" .Language::show($document['MaNgonNgu'])["TenNgonNgu"] . "</td>";

@@ -35,6 +35,12 @@ class readerController
                 if(isset($_POST[$prop]))
                 {
                     $Reader->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=reader&action=add&result='.$result);
+                        return;
+                    }
                 }
             }
             if($Reader->save())
@@ -65,6 +71,12 @@ class readerController
                 if(isset($_POST[$prop]))
                 {
                     $reader->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=reader&action=edit&result='.$result.'&SoThe='.$_POST['SoThe']);
+                        return;
+                    }
                 }
             }
             if($reader->update())

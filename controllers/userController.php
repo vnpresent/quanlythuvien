@@ -41,6 +41,12 @@ class userController
                 if(isset($_POST[$prop]))
                 {
                     $user->$prop = trim($_POST[$prop]);
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=user&action=add&result='.$result);
+                        return;
+                    }
                 }
             }
             if($user->save())
@@ -81,6 +87,12 @@ class userController
                 if(isset($_POST[$prop]))
                 {
                     $user->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=user&action=edit&result='.$result.'&id='.$_POST['id']);
+                        return;
+                    }
                 }
             }
             if($user->update())

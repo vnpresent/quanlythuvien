@@ -47,8 +47,14 @@ class documentController
                 if(isset($_POST[$prop]))
                 {
                     $document->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=document&action=add&result=false');
+                        return;
+                    }
                 }
             }
+            $document->MaTG = json_encode($_POST['MaTG']);
             if($document->save())
                 $result = 'true';
             else
@@ -84,8 +90,14 @@ class documentController
                 if(isset($_POST[$prop]))
                 {
                     $document->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=document&action=edit&result=false&MaTL='.$_POST['MaTL']);
+                        return;
+                    }
                 }
             }
+            $document->MaTG = json_encode($_POST['MaTG']);
             if($document->update())
                 $result = 'true';
             else

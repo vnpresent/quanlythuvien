@@ -32,6 +32,11 @@ class PositionController
                 if(isset($_POST[$prop]))
                 {
                     $Position->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        header('location:index.php?controller=position&action=add&result=false');
+                        return;
+                    }
                 }
             }
             if($Position->save())
@@ -62,6 +67,12 @@ class PositionController
                 if(isset($_POST[$prop]))
                 {
                     $Position->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=position&action=edit&result='.$result.'&MaVT='.$_POST['MaVT']);
+                        return;
+                    }
                 }
             }
             if($Position->update())

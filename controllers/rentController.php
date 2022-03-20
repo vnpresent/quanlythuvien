@@ -87,6 +87,12 @@ class rentController
                 if(isset($_POST[$prop]))
                 {
                     $rentdetail->$prop = $_POST[$prop];
+                    if(ctype_space($_POST[$prop]) || empty($_POST[$prop]))
+                    {
+                        $result = 'false';
+                        header('location:index.php?controller=rent&action=edit&result='.$result.'&id='.$_POST['id']);
+                        return;
+                    }
                 }
             }
             if($rentdetail->update())

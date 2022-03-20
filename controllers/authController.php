@@ -23,7 +23,6 @@ class authController
         // kiểm tra tồn tại việc post username và password lên không,có là chức năng login
         if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username']) && isset($_POST['password']))
         {
-            print($_POST['username']);
             $result = Auth::login($_POST['username'],$_POST['password']);
             if($result)
                 header('location:index.php');
