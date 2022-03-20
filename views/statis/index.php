@@ -3,23 +3,23 @@
 <?php
 
 
-// số tài liệu đang được mượn
-echo Statis::statisdocument();
+// // số tài liệu đang được mượn
+// echo Statis::statisdocument();
 
-// số đọc giả đang mượn sách
-echo Statis::statisreader();
+// // số đọc giả đang mượn sách
+// echo Statis::statisreader();
 
-// Tài Liệu thủ thư cho mượn
-echo Statis::statisdocumentrent();
+// // Tài Liệu thủ thư cho mượn
+// echo Statis::statisdocumentrent();
 
-// số tài liệu còn lại
-echo Statis::statisdocumentremain();
+// // số tài liệu còn lại
+// echo Statis::statisdocumentremain();
 
-// độc giả vi phạm
-echo Statis::violatingreaders();
+// // độc giả vi phạm
+// echo Statis::violatingreaders();
 
-// số sách nhập trong tháng
-echo Statis::statisenter();
+// // số sách nhập trong tháng
+// echo Statis::statisenter();
 
 ?>
 <div id="page-content-wrapper">
@@ -31,14 +31,14 @@ echo Statis::statisenter();
 
             <div class="container-fluid px-4">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button type="button" class="btn btn-primary">báo cáo</button>
+                    <button type="button" class="btn btn-primary" style="margin-right:10px;">báo cáo</button>
                     <button type="button" class="btn btn-primary">In ấn</button>
                 </div>
                 <div class="row g-3 my-2">
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">44</h3>
+                                <h3 class="fs-2"><?php echo Statis::statisdocument();?></h3>
                                 <p class="fs-5">Tài liệu đang được mượn</p>
                                 
                             </div>
@@ -49,7 +49,7 @@ echo Statis::statisenter();
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">24</h3>
+                                <h3 class="fs-2"><?php echo Statis::statisreader();?></h3>
                                 <p class="fs-5">Độc giả đang mượn tài liệu</p>
                             </div>
                             <i class="fas fa-book-reader fs-1 primary-text border rounded-full secondary-bg"
@@ -59,7 +59,7 @@ echo Statis::statisenter();
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">45</h3>
+                                <h3 class="fs-2"><?php echo Statis::statisdocumentrent();?></h3>
                                 <p class="fs-5">Tài liệu thủ thư cho mượn</p>
                             </div>
                             <i class="fas fa-book fs-1 primary-text border rounded-full secondary-bg"
@@ -69,7 +69,7 @@ echo Statis::statisenter();
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">49</h3>
+                                <h3 class="fs-2"><?php echo Statis::statisdocumentremain(); ?></h3>
                                 <p class="fs-5">Tài liệu còn trong thư viện</p>
                             </div>
                             <i class="fas fa-book fs-1 primary-text border rounded-full secondary-bg"
@@ -84,7 +84,7 @@ echo Statis::statisenter();
                     <div class="col-md-4">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded my-4">
                             <div>
-                                <h3 class="fs-2">55</h3>
+                                <h3 class="fs-2"><?php echo Statis::violatingreaders();?></h3>
                                 <p class="fs-5">Độc giả vi phạm</p>
                             </div>
                             <i class="fas fa-book-reader fs-1 primary-text border rounded-full secondary-bg"
@@ -93,7 +93,7 @@ echo Statis::statisenter();
                         <div
                             class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded my-4">
                             <div>
-                                <h3 class="fs-2">49</h3>
+                                <h3 class="fs-2">20</h3>
                                 <p class="fs-5">Tài liệu thanh lý</p>
                             </div>
                             <i class="fas fa-book fs-1 primary-text border rounded-full secondary-bg"
@@ -101,7 +101,7 @@ echo Statis::statisenter();
                         </div>
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded my-4">
                             <div>
-                                <h3 class="fs-2">55</h3>
+                                <h3 class="fs-2"><?php echo Statis::statisenter();?></h3>
                                 <p class="fs-5">Tài liệu nhập mới</p>
                             </div>
                             <i class="fas fa-book fs-1 primary-text border rounded-full secondary-bg"
@@ -120,7 +120,13 @@ echo Statis::statisenter();
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var xValues = ["TL nhập mới", "TL thư viện", "Tl mượn", "ĐG mượn TL", "TL TT mượn", "ĐG vi phạm", "TL Thanh lý"];
-        var yValues = [55, 49, 44, 24, 45, 55, 49];
+        var tlnm=<?php echo Statis::statisenter();?>;
+        var tltt=<?php echo Statis::statisdocumentremain(); ?>;
+        var tlm =<?php echo Statis::statisdocument();?>;
+        var dgmtl=<?php echo Statis::statisreader();?>;
+        var tlttm=<?php echo Statis::statisdocumentrent();?>;
+        var dgvp=<?php echo Statis::violatingreaders();?>;
+        var yValues = [tlnm, tltt, tlm, dgmtl, tlttm, dgvp, 20];
         var barColors = ["red", "green", "blue", "orange", "brown", "red", "green"];
 
         new Chart("myChart", {
